@@ -59,6 +59,7 @@
 - UserPage
 - Advices
 - Active
+- Navbar
 
 ## UML
 ![UMLFRONT-PM](https://user-images.githubusercontent.com/92248175/146686631-2a612f9f-c6ff-4c2d-9811-520617fd0867.png)
