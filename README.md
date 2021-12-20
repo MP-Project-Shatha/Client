@@ -67,8 +67,13 @@
 ## Wirframes
 ![1](https://user-images.githubusercontent.com/92248175/146723241-953895b8-5a1b-47ec-924d-eaad218bc410.png)
 
+
 ![2](https://user-images.githubusercontent.com/92248175/146723249-d2d8bb58-4bf3-4323-8b51-4db289ac7618.png)
 
+
 ![3](https://user-images.githubusercontent.com/92248175/146723258-02cd7ef4-7d5a-4635-bb03-0a17c196d433.png)
+
+
+![4](https://user-images.githubusercontent.com/92248175/146724545-4bde900c-890a-4ae9-840f-f251821b2a1a.png)
 
 
