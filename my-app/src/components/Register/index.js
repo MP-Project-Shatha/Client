@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import "./style.css";
 
-const REGISTER = () => {
+const Register = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
   const [err, setErr] = useState("");
@@ -12,7 +12,7 @@ const REGISTER = () => {
   const signup = async (e) => {
     try {
       e.preventDefault();
-      const result = await axios.post(`${BASE_URL}/resgister`, {
+      const result = await axios.post(`${BASE_URL}/register`, {
         username: e.target.username.value,
         email: e.target.email.value,
         password: e.target.password.value,
@@ -31,9 +31,9 @@ const REGISTER = () => {
     }
   };
   return (
-    <div className="home">
-      <div className="formm">
-        <h1>Sign Up</h1>
+    <div className="Register">
+      <div className="Reg">
+        <h1>Register</h1>
         <form onSubmit={signup}>
           <label htmlFor="username">Username:</label>
           <input type="text" name="username" />
@@ -43,7 +43,7 @@ const REGISTER = () => {
           <input type="password" name="password" />
           <label htmlFor="password2">Confirm Password:</label>
           <input type="password" name="password2" />
-          <button type="submit">Sign up</button>
+          <button type="submit">Register</button>
         </form>
         <p>{err}</p>
         <button
@@ -58,4 +58,7 @@ const REGISTER = () => {
   );
 };
 
-export default REGISTER;
+
+
+
+export default Register;
