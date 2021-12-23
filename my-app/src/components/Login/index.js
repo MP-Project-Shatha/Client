@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./style.css";
 import { useNavigate } from "react-router-dom";
-
+import "./style.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,7 +21,6 @@ const Login = () => {
       if (result.data.err) {
         setErr(result.data.err);
       } else if (result.data.success) {
-
         navigate("/");
       }
     } catch (error) {
