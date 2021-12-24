@@ -31,10 +31,6 @@ const Home = () => {
 
   return (
     <div>
-      home
-      <br />
-      <br />
-      <br />
       Your calories: {userInfo.weight * 24 * userInfo.active}
       <br />
       Status: {status}
