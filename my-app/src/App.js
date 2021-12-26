@@ -8,6 +8,7 @@ import PasswordReset from "./components/Passwordrest";
 import Activated from "./components/Activated";
 import Forget from "./components/Forget";
 import Profile from "./components/Profile"
+import Advices from "./components/Advices"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/forgot" element={<Forget />} />
         <Route exact path="/activate/:token" element={<Activated />} />
       <Route exact path="/Profile" element={<Profile />} />
+      <Route exact path="/Advices" element={<Advices />} />
 
       </Routes>
     </>
