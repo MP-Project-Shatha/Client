@@ -9,6 +9,7 @@ import Activated from "./components/Activated";
 import Forget from "./components/Forget";
 import Profile from "./components/Profile"
 import Advices from "./components/Advices"
+import Information from "./components/Information"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/activate/:token" element={<Activated />} />
       <Route exact path="/Profile" element={<Profile />} />
       <Route exact path="/Advices" element={<Advices />} />
+      <Route exact path="/Information" element={<Information />} />
 
       </Routes>
     </>

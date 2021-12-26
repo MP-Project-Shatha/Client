@@ -5,37 +5,49 @@ const Advices = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [userInfo, setuserInfo] = useState([]);
   const [status, setStatus] = useState("");
-
+  const [data, setData] = useState([]);
+  
   const getPost = () => {
     try {
       axios
-        .get(`${BASE_URL}/getInfo/${id}`)
+        .get(`${BASE_URL}/getInfo/${userInfo.result._id}`)
         .then((result) => {
           console.log(result.data);
-          setuserInfo(result.data);
-          let s = result.data.weight / result.data.height^2;
+          setData(result.data);
+          let s = result.data.weight / (result.data.height/100)**2;
           console.log(s);
-          if (s > 16  && s < 18 ) setStatus("underweight");
-          if (s > 19  && s < 25) setStatus("normal");
-          if (s > 26 && s < 30) setStatus("overweight");
-          if (s > 31 && s < 40) setStatus("obesity");
+          if (s < 18.5) setStatus("underweight");
+          if (s > 18.5  && s <= 25) setStatus("normal");
+          if (s > 25 && s <= 30) setStatus("overweight");
+          if (s > 30) setStatus("obesity");
         });
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(() => {
-    getPost();
-  }, []);
 
+  useEffect(() => {
+    setuserInfo(JSON.parse(localStorage.getItem("user")));
+
+  }, []);
+useEffect(() => {
+  
+  if(userInfo.result){
+    // setuserInfo(JSON.parse(localStorage.getItem("user")));
+    getPost();
+
+  }
+  
+}, [userInfo])
   return (
     <div>
-      Your calories: {userInfo.weight * 24 * userInfo.active}
+      {console.log(userInfo.result)}
+      Your calories: {userInfo?.result?.weight*24*userInfo?.result?.active}
       <br />
       Status: {status}
       <br />
-      Your Water: {userInfo.weight * 30}
+      Your Water: {userInfo?.result?.weight * 30}
     </div>
   );
 };

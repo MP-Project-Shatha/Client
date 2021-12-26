@@ -18,10 +18,10 @@ const Login = () => {
         },
         { withCredentials: true }
       );
-      if (result.data.err) {
-        setErr(result.data.err);
-      } else if (result.data.success) {
-        navigate("/");
+      console.log(result.data);
+      if (result.data?.token) {
+        localStorage.setItem("user",JSON.stringify(result.data))
+        navigate("/information");
       }
     } catch (error) {
       console.log(error);
