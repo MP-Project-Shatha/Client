@@ -4,14 +4,14 @@ import "./style.css";
 import { useNavigate } from "react-router-dom";
 
 function Information() {
-    const BASE_URL = process.env.REACT_APP_BASE_URL;
-      const navigate = useNavigate();
-const addInformation = async (e) => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+  const navigate = useNavigate();
+  const addInformation = async (e) => {
     e.preventDefault();
     const result = await axios.post(
       `${BASE_URL}/addInfo`,
       {
-          id:user.result._id,
+        id: user.result._id,
         gender: e.target.Gender.value,
         age: e.target.Age.value,
         weight: e.target.Weight.value,
@@ -31,29 +31,29 @@ const addInformation = async (e) => {
       { withCredentials: true }
     );
     console.log(result.data);
-    if (result.data=="Done"){
-        navigate("/Advices")
+    if (result.data == "Done") {
+      navigate("/Advices");
     }
-}
+  };
 
-const [user, setuser] = useState([])
-useEffect(() => {
-setuser(JSON.parse(localStorage.getItem("user")));
-},[])
+  const [user, setuser] = useState([]);
+  useEffect(() => {
+    setuser(JSON.parse(localStorage.getItem("user")));
+  }, []);
 
   return (
-    <div>
+    <div className="overlay">
       <form onSubmit={addInformation}>
         <label htmlFor="Gender">Gender:</label>
         <br />
         <select name="Gender">
-            <option value="Female">Female</option>
-            <option value="Male ">Male</option>
-          </select>
+          <option value="Female">Female</option>
+          <option value="Male ">Male</option>
+        </select>
         <br />
         <label htmlFor="Age">Age:</label>
         <br />
-        <input type="Age" name="Age" />
+        <input type="Age" name="text"  id="login__password" className="form__input" />
         <br />
         <label htmlFor="Weight">Weight:</label>
         <br />
@@ -99,18 +99,18 @@ setuser(JSON.parse(localStorage.getItem("user")));
         <br />
         <input type="Bonepercentage" name="Bonepercentage" />
         <br />
-          <br />
-          <select name="Active" id="Active">
-            <option value="1.5">Active</option>
-            <option value="1.4 ">Average active</option>
-            <option value="1.3">Inactive</option>
-          </select>
         <br />
-          <select name="Nutrition" id="Nutrition">
-            <option value="HighNutrition">High nutrition</option>
-            <option value="AverageNutrition ">Average nutrition</option>
-            <option value="LowNutrition">Low nutrition</option>
-          </select>
+        <select name="Active" id="Active">
+          <option value="1.5">Active</option>
+          <option value="1.4 ">Average active</option>
+          <option value="1.3">Inactive</option>
+        </select>
+        <br />
+        <select name="Nutrition" id="Nutrition">
+          <option value="HighNutrition">High nutrition</option>
+          <option value="AverageNutrition ">Average nutrition</option>
+          <option value="LowNutrition">Low nutrition</option>
+        </select>
         <br />
 
         <button type="submit">Submit</button>
