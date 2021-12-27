@@ -9,12 +9,10 @@ const Navbar = () => {
           <div>
             <ul>
               <li>
-                <Link to={"/Home"} >
-                  Home
-                </Link>
+                <Link to={"/Home"}>Home</Link>
               </li>
-             <li>
-                <Link to="/register">register</Link>
+              <li>
+                <Link to="/register">Register</Link>
               </li>
             </ul>
           </div>
@@ -24,25 +22,25 @@ const Navbar = () => {
                 <button className="logout-btn">logout</button>
               ) : (
                 <li>
-                  <Link to={"/login"}> login</Link>
+                  <Link to={"/login"}> Login</Link>
                 </li>
-               
-                
               )}
-                
             </ul>
             <ul>
-            <li>
-                  <Link to="/Profile"> Profile</Link>
-                </li>
+              <li>
+                <Link to="/Profile"> Profile</Link>
+              </li>
             </ul>
             <ul>
-            <li>
-                  <Link to="/Advices"> Advices</Link>
-                </li>
-                <li>
-                  <Link to="/Information"> Information </Link>
-                </li>
+              <li>
+                <Link to="/Advices"> Advices</Link>
+              </li>
+              <li>
+                <Link to="/Information"> Information </Link>
+              </li>
+              <li>
+                <Link to="/Exercises"> Exercises </Link>
+              </li>
             </ul>
           </div>
         </div>
