@@ -15,7 +15,7 @@ import Exercises from "./components/Exercises"
 function App() {
   return (
     <>
-    {/* <Navbar/> */}
+     {/* <Navbar/>  */}
       <Routes>
       <Route exact path="/Home" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
