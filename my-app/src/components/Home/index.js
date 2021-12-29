@@ -16,7 +16,6 @@ const Home = () => {
       </video>
      
     </div>
-  )
-}
+  )}
 
-export default Home;
+
