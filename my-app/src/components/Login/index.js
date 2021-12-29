@@ -15,8 +15,7 @@ const Login = () => {
         {
           email: e.target.email.value,
           password: e.target.password.value,
-        },
-        { withCredentials: true }
+        }
       );
       console.log(result.data);
       if (result.data?.token) {
@@ -35,7 +34,7 @@ const Login = () => {
 
     <div className="overlay">
     <video autoPlay muted loop id="video1">
-      <source src="https://ak.picdn.net/shutterstock/videos/1028252639/preview/stock-footage-girl-in-the-gym-fitness-training-workout-sport.webm" type="video/webm" />
+      <source src="https://media.istockphoto.com/videos/side-dolly-shot-young-strong-caucasian-athletic-sportsman-exercising-video-id1177079313" type="video/webm" />
       Your browser does not support HTML5 video.
     </video>
       <div className="overlay__inner">

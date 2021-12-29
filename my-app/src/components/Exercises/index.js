@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 const Exercises = () => {
   const [text, setText] = useState([]);
   const [news, SetNews] = useState([]);
@@ -10,8 +10,9 @@ const Exercises = () => {
 
   const result = async () => {
     try {
-      const data = await axios.get(`https://wger.de/api/v2/exercise/?format=json&limit=20&offset=100`)
-        .then(result => {
+      const data = await axios
+        .get(`https://wger.de/api/v2/exercise/?format=json&limit=20&offset=100`)
+        .then((result) => {
           SetNews(result.data.results);
           console.log(result);
         });
@@ -21,30 +22,20 @@ const Exercises = () => {
     }
   };
 
-
-
   return (
-    
-     <>
-        <h1 >Exercises </h1>
-      
-          {news.map(e => (
-            <div>
-              {' '}
-              
-                <h1>{e.name}</h1>
-                <p>{e.description}</p>
-                
-                <br />
-                <br />
-                
-              
-            </div>
-          ))}{' '}
-       
-      </>
-    
+    <>
+      <h1>Exercises </h1>
+      {news.map((e) => (
+        <div>
+          {" "}
+          <h1>{e.name}</h1>
+          <div dangerouslySetInnerHTML={{ __html: e.description }} />
+          <br />
+          <br />
+        </div>
+      ))}{" "}
+    </>
   );
 };
 
-export default Exercises
+export default Exercises;

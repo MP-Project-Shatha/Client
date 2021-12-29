@@ -1,28 +1,29 @@
-import React from 'react'
+import React from "react";
 import axios from "axios";
-import "./style.css"
+import "./style.css";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
-const Profile = () => { 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+const Profile = () => {
   const navigate = useNavigate();
   const [account, setAccount] = useState([]);
   const [local, setLocal] = useState([]);
   const [edit, setEdit] = useState("");
+  const [editEmail, setEmail] = useState("");
 
-  
   const getData = async () => {
-   
-    if(local){
-    const item = await axios.get(`http://localhost:4000/users/email/${local.email}`
-    );
-    setAccount(item.data);} else {
-    // navigate('/home')
-  }
+    console.log(local);
+    if (local.result) {
+      const item = await axios.get(`${BASE_URL}/email/${local.result.email}`);
+
+      setAccount(item.data);
+    } else {
+      // navigate('/home')
+    }
   };
 
-
   const getDataLS = () => {
-    setLocal(JSON.parse(localStorage.getItem("newUser")));
+    setLocal(JSON.parse(localStorage.getItem("user")));
   };
 
   useEffect(() => {
@@ -33,62 +34,96 @@ const Profile = () => {
     // eslint-disable-next-line
   }, [local]);
 
-// const showOption = ()=>{
-// $('.show').show();
-// navigate("/profile")
-
-// }
-
   const editName = async (e) => {
     e.preventDefault();
     if (edit.length > 0) {
-       const editFullName = await axios.put(`http://localhost:4000/users/edit/${local.email}`, {
-        name: edit,
-        });
-        console.log(editFullName);
-        document.getElementById("name")
-        getData();
-      } else {
-        console.log("");
-      }
-  };
-  const kick =()=>{
-    // eslint-disable-next-line
-    localStorage. clear()
-     navigate("/login");
+      const editFullName = await axios.put(
+        `${BASE_URL}/edit/${local.result.email}`,
+
+        {
+          fullName: edit,
+          // newEmail:editEmail,
+          // phone:edit,
+          // status1:edit,
+        }
+      );
+      console.log(editFullName);
+      document.getElementById("username");
+      getData();
+    } else {
+      console.log("");
     }
+  };
+  const kick = () => {
+    // eslint-disable-next-line
+    localStorage.clear();
+    navigate("/login");
+  };
 
   return (
-    <div>
+    <div className="profile">
       {account.map((item, i) => {
+        console.log(item.img);
         return (
-          <section className="section-login vvv">
-          <div key={i} className="login-box">
-            <form className={"form"} >
-      
-              <div className="input-field">
-              <input type="submit" value="Changing name" onClick={editName}  className="show"/>
-              </div>
-              <div className="input-field">
-              <input type="text" placeholder="Changing You username" onChange={(e) => setEdit(e.target.value)} className="show"/>
-              </div>
-            <h1>Name: {item.name}</h1>
-            
-            
-            <h1>Email: {item.email}</h1>
-            
-            
+          <div>
            
-            <button className="btn btn-danger btn-block" onClick={kick}>Logout</button>
 
             
-            </form>
+
+            <div className="main">
+              <h2>PROFILE</h2>
+              <div className="card">
+              <div >
+              <div className="profile">
+                <img
+                  src={item.img}
+                  alt=""
+                  width={100}
+                  height={100}
+                />
+              </div>
+              <div className="sidenav-url"></div>
+            </div>
+                <div className="card-body">
+                  <i className="fa fa-pen fa-xs edit" />
+                  <table>
+                    
+                    <tbody>
+                      <tr>
+                        <td>UserName</td>
+                        <td>:</td>
+                        <td>{item.username}</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td>{item.email}</td>
+                      </tr>
+                      <tr>
+                        <td>weight</td>
+                        <td>:</td>
+                        <td>{item.weight}</td>
+                      </tr>
+                      <tr>
+                        <td>fatpercentage</td>
+                        <td>:</td>
+                        <td>{item.fatpercentage}</td>
+                      </tr>
+                      <tr>
+                        <td>Age</td>
+                        <td>:</td>
+                        <td>{item.age}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
-          </section>
         );
       })}
     </div>
   );
 };
 
-export default Profile
+export default Profile;

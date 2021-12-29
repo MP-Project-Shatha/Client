@@ -8,6 +8,7 @@ function Information() {
   const navigate = useNavigate();
   const addInformation = async (e) => {
     e.preventDefault();
+    console.log(e.target);
     const result = await axios.post(
       `${BASE_URL}/addInfo`,
       {
@@ -53,7 +54,8 @@ function Information() {
         <br />
         <label htmlFor="Age">Age:</label>
         <br />
-        <input type="Age" name="text"  id="login__password" className="form__input" />
+        {/*  // يحفظ القيمة */}
+        <input type="Age" name="Age" defaultValue=""  id="login__password" className="form__input" />
         <br />
         <label htmlFor="Weight">Weight:</label>
         <br />
