@@ -55,6 +55,7 @@
     box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
     border-radius: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.125);
+    grid: fixed;
   }
   
   .overlay__inner {
@@ -272,7 +273,7 @@
   }
   
   a {
-    color: #0074ff;
+    color: #ff0000;
     outline: 0;
     text-decoration: none;
   }
@@ -330,9 +331,9 @@
     --loginInputBackgroundColor: #c1d9f9;
     --loginInputHoverBackgroundColor: #434a52;
     --loginLabelBackgroundColor: #363b41;
-    --loginSubmitBackgroundColor: #604cea;
+    --loginSubmitBackgroundColor: #23212b;
     --loginSubmitColor: #fff;
-    --loginSubmitHoverBackgroundColor: #0028fd;
+    --loginSubmitHoverBackgroundColor: #60626d;
   }
   
   .login {
@@ -373,9 +374,7 @@
   .login input[type="submit"]:hover {
     background-color: var(--loginSubmitHoverBackgroundColor);
   }
-  
-  /* modules/text.css */
-  
+    
   p {
     margin-block: 1.5rem;
   }
