@@ -44,8 +44,8 @@ const Register = () => {
       <div className="overlay__inner">
     
         <h1 className="overlay__title">
-          Form<br />
-          <span className="text-gradient">Login</span>
+        <br />
+          <span className="text-gradient">Register</span>
         </h1>
       
         <div className="align">
@@ -76,10 +76,10 @@ const Register = () => {
                   </svg><span className="hidden">Confirm Password</span></label>
                 <input id="login__password" type="password" name="password" className="form__input" placeholder="Confirm Password" required />
               </div>
-              <div className="form__field">
+              
                 
-                <input className="text-gradient" type="submit" defaultValue="Sign In" />
-              </div>
+                <button className="text-gradient" type="submit" defaultValue="Sign In" >sign up</button> 
+           
             </form>
             </from>
             <p className="text--center">Not a member? <a href={"/login"}>Login now</a> <svg className="icon">
