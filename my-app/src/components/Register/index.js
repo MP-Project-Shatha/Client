@@ -4,11 +4,13 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import {MdEmail} from "react-icons/md"
 
+
 import "./style.css";
 
 const Register = () => {
-  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+
   const [err, setErr] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -90,6 +92,7 @@ const Register = () => {
             <p className="text--center">Not a member? <a href={"/login"}>Login now</a> <svg className="icon">
                 <use xlinkHref="#icon-arrow-right" />
               </svg></p>
+              <button onClick={()=>navigate('/')} >back</button>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" className="icons">
             &gt;

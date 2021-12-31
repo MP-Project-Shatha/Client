@@ -58,9 +58,9 @@ const Navbar = () => {
           </>
         )}
       </ul>
-      <h1 classNmae="logo">
+      {/* <h1 classNmae="logo">
         <img src={logo} />
-      </h1>
+      </h1> */}
     </div>
   );
 };

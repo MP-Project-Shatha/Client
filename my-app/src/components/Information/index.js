@@ -52,8 +52,10 @@ function Information() {
   }, []);
 
   return (
+    <>
+          <Navbar/>
+
     <div className="overlay">
-      <Navbar/>
       <form onSubmit={addInformation}>
         <label htmlFor="Gender">Gender:</label>
         <br />
@@ -129,6 +131,7 @@ function Information() {
         <button type="submit">Submit</button>
       </form>
     </div>
+    </>
   );
 }
 

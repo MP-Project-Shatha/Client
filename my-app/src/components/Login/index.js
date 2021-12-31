@@ -15,10 +15,10 @@ const Login = () => {
         password: e.target.password.value,
       });
       console.log(result.data);
-      
+
       if (result.data?.token) {
         setErr(result.data);
-       
+
         localStorage.setItem("user", JSON.stringify(result.data));
         navigate("/information");
       }
@@ -39,18 +39,13 @@ const Login = () => {
         </video>
         <div className="overlay__inner">
           <h1 className="overlay__title">
-            
             <br />
             <span className="text-gradient">Login</span>
           </h1>
 
           <div className="align">
             <div className="grid">
-              <form
-            
-                className="form login"
-                onSubmit={login}
-              >
+              <form className="form login" onSubmit={login}>
                 <div className="form__field">
                   <label htmlFor="login__username">
                     <svg className="icon">
@@ -84,17 +79,18 @@ const Login = () => {
                     required
                   />
                 </div>
-                   
-                <button
+                {/* <button
                     className="text-gradient"
                     type="submit"
                     defaultValue="Sign In"
                   >
                     login
-                  </button>
-              
-              
+                  </button> */}
+                <div className="group">
+                  <button class="custom-btn btn-2">Read More</button>
+                </div>
               </form>
+
               <p className="text--center">
                 Not a member? <a href={"/register"}>Sign up now</a>{" "}
                 <svg className="icon">
@@ -102,12 +98,12 @@ const Login = () => {
                 </svg>
               </p>
               <p className="text--center">
-                 forget password? <a href={"/forgot"}>forget password</a>{" "}
+                forget password? <a href={"/forgot"}>forget password</a>{" "}
                 <svg className="icon">
                   <use xlinkHref="#icon-arrow-right" />
                 </svg>
               </p>
-             
+              <button onClick={() => navigate("/")}>back</button>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" className="icons">
               &gt;
