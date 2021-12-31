@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import Navbar from '../Navbar';
+
+
 
 const Exercises = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
-  const [medical, setMedical] = useState([]);
+  const [cardsExe, setCardsExe] = useState([]);
 
   // exercises befor login
 
@@ -19,7 +22,7 @@ const Exercises = () => {
         .then((result) => {
           if (result.data) {
             console.log(result.data);
-            setMedical(result.data);
+            setCardsExe(result.data);
           }
         });
    
@@ -35,17 +38,20 @@ const Exercises = () => {
   }, []);
 
   return (
-    <div className="wrapper">
+   <>
+    <Navbar/> 
+    <div className="profile">
 
-      {medical.map((item, i) => {
+<div className="mainwrapper">
+      {cardsExe.map((item, i) => {
         return (
           <div >
            
-      
-            <div className="cardss">
+           <p> {item.type}</p>
+            <div className="full">
            
-              <p> {item.type}</p>
-              <div className="card" > <img
+              
+              <div  > <img className="imag"
               src={item.img}
               alt=""
               path="images/"
@@ -59,7 +65,9 @@ const Exercises = () => {
         
         );
       })}
+      </div>
     </div>
+    </>
   );
     };
 export default Exercises;

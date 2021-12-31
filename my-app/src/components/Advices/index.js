@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import './style.css';
+import Navbar from '../Navbar';
+
 
 const Advices = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -48,19 +51,57 @@ useEffect(() => {
   
 }, [userInfo])
   return (
-    <div>
-      {console.log(userInfo.result)}
-      Your calories: {userInfo?.result?.weight*24*userInfo?.result?.active}
-      <br />
-      Status: {status}
+    <>
+               <Navbar/> 
 
-      <br />
-      <br/>
-      Advices :{massig}
-      <br/>
-      Your Water: {userInfo?.result?.weight * 30}
+    <div className="frame">
+    <div className="list">
+     
+      <ul>
+        <li>
+         
+          <label htmlFor="item-1" className="text">Create a list</label>
+         
+        </li>
+        <li>
+        
+          <label htmlFor="item-2" className="text">Your calories: {userInfo?.result?.weight*24*userInfo?.result?.active}</label>
+         
+        </li>
+        <li>
+         
+          <label htmlFor="item-3" className="text">Status: {status}</label>
+         
+        </li>
+        <li>
+         
+          <label htmlFor="item-4" className="text">Advices :{massig}</label>
+        
+      
+        </li>
+        <li>
+         
+          <label htmlFor="item-4" className="text">Your Water: {userInfo?.result?.weight * 30}</label>
+         
+        
+        </li>
+      </ul>
     </div>
+  </div>
+  </>
   );
 };
 
 export default Advices;
+{/* <div>
+{console.log(userInfo.result)}
+Your calories: {userInfo?.result?.weight*24*userInfo?.result?.active}
+<br />
+Status: {status}
+
+<br />
+<br/>
+Advices :{massig}
+<br/>
+Your Water: {userInfo?.result?.weight * 30}
+</div>  */}

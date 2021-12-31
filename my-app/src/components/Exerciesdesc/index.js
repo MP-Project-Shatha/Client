@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./style.css";
 
 const Exerciesdesc = () => {
-    const param =useParams()
+  const param = useParams();
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
   const [workout, setWorkout] = useState([]);
@@ -15,7 +15,7 @@ const Exerciesdesc = () => {
       axios.get(`${BASE_URL}/allExercises`).then((result) => {
         if (result.data) {
           console.log(result.data);
-          setWorkout(result.data.filter(i=>i._id==param.id));
+          setWorkout(result.data.filter((i) => i._id == param.id));
         }
       });
     } catch (error) {
@@ -29,19 +29,21 @@ const Exerciesdesc = () => {
 
   return (
     <div className="profile">
+      <div className="card-show">
       {workout.map((item, i) => {
         return (
           <div>
-              <tr>
+            <tr>
               <td>{item.title}</td>
             </tr>
-           <video src={item.video} controls/>
+            <video src={item.video} controls />
             <tr>
               <td>{item.desc}</td>
             </tr>
           </div>
         );
       })}
+      </div>
     </div>
   );
 };

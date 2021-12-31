@@ -1,7 +1,9 @@
 .login input[type="text"] {
-    background-color: #c1d9f900;
+    background-color: #181f2900;
     margin-bottom: 15px;
     border-bottom: solid 0.1px #d2d2d2;
     border-radius: 10px;
   }
-  
+  #login__password{
+    background-color:rgb(241, 188, 188);
+  }

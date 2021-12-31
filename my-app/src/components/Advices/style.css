@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #22c1c3;
+  background: linear-gradient(0deg, #22c1c3 0%, #fdbb2d 100%);
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.head {
+  padding: 20px 0;
+  margin: 0 30px;
+  border-bottom: 1px solid #D4DCE0;
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+.subtitle {
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+ul {
+  list-style: none;
+  padding: 4px 0;
+  margin: 0 30px;
+}
+ul li {
+  position: relative;
+  display: block;
+  margin: 24px 0;
+  height: 14px;
+  color: #1A374D;
+}
+ul .text {
+  float: left;
+  font-size: 13px;
+  line-height: 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+ul .button {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  float: right;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #497081;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s ease-out 0.5s;
+}
+ul .checkmark {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  stroke: #0F2C67;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-dasharray: 30 30;
+  stroke-dashoffset: 30;
+  transition: all 0.5s ease-out;
+}
