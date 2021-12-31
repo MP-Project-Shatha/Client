@@ -1,10 +1,13 @@
 import React from 'react'
+import Navbar from '../Navbar';
 import gym from "./../../videos/gym.mp4"
 import "./style.css";
 
 const Home = () => {
   return (
     <div>
+           <Navbar/> 
+
 <div className="bggg">  </div>
       <video
         className="videoInsideDec"

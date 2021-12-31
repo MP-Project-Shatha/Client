@@ -7,15 +7,15 @@ const Exerciesdesc = () => {
     const param =useParams()
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
-  const [medical, setMedical] = useState([]);
-  console.log(JSON.parse(localStorage.getItem("user")).result._id);
+  const [workout, setWorkout] = useState([]);
+  // console.log(JSON.parse(localStorage.getItem("user")).result._id);
   console.log(param.id);
   const getPosts = () => {
     try {
       axios.get(`${BASE_URL}/allExercises`).then((result) => {
         if (result.data) {
           console.log(result.data);
-          setMedical(result.data.filter(i=>i._id==param.id));
+          setWorkout(result.data.filter(i=>i._id==param.id));
         }
       });
     } catch (error) {
@@ -29,14 +29,14 @@ const Exerciesdesc = () => {
 
   return (
     <div className="profile">
-      {medical.map((item, i) => {
+      {workout.map((item, i) => {
         return (
           <div>
-            
+              <tr>
+              <td>{item.title}</td>
+            </tr>
            <video src={item.video} controls/>
             <tr>
-              <td>desc</td>
-              <td>:</td>
               <td>{item.desc}</td>
             </tr>
           </div>

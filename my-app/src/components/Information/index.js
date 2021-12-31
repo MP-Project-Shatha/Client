@@ -2,10 +2,19 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
+import schedule from 'node-schedule';
+import Navbar from "../Navbar";
 
 function Information() {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
+  // const day = day(0-7);
+  
+  // schedule.scheduleJob(day, () => {
+  //   addInformation();
+  //  });
+
+
   const addInformation = async (e) => {
     e.preventDefault();
     console.log(e.target);
@@ -18,12 +27,12 @@ function Information() {
         weight: e.target.Weight.value,
         height: e.target.Height.value,
         wrist: e.target.Wrist.value,
-        Waist: e.target.Waist.value,
+        waist: e.target.Waist.value,
         chest: e.target.Chest.value,
         thigh: e.target.Thigh.value,
         pelvis: e.target.Pelvis.value,
         ankle: e.target.Ankle.value,
-        muscledimeter: e.target.Muscledimeter.value,
+        musclediameter: e.target.Muscledimeter.value,
         fatpercentage: e.target.Fatpercentage.value,
         bonepercentage: e.target.Bonepercentage.value,
         active: e.target.Active.value,
@@ -44,6 +53,7 @@ function Information() {
 
   return (
     <div className="overlay">
+      <Navbar/>
       <form onSubmit={addInformation}>
         <label htmlFor="Gender">Gender:</label>
         <br />
@@ -67,7 +77,8 @@ function Information() {
         <br />
         <label htmlFor="Wrist">Wrist:</label>
         <br />
-        <input type="Wrist" name="Wrist" />
+        <input type="Wrist" name="Wrist" /> 
+        {/* //defaultValue={item.} */}
         <br />
         <label htmlFor="Waist">Waist:</label>
         <br />

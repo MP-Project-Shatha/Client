@@ -1,0 +1,25 @@
+.card {
+  
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 30%;
+    margin: 32px 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: black;
+    transition: 1s;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}

@@ -10,15 +10,20 @@ const Register = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
   const [err, setErr] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
 
+  
   const signup = async (e) => {
     try {
       e.preventDefault();
       const result = await axios.post(`${BASE_URL}/register`, {
-        username: e.target.username.value,
-        email: e.target.email.value,
-        password: e.target.password.value,
-        password2: e.target.password2.value,
+        username,
+        email,
+        password, 
+        password2, 
         role: "61a4eae86ad0c2fe2b45d0aa",
       });
       console.log(result.data);
@@ -50,31 +55,31 @@ const Register = () => {
       
         <div className="align">
           <div className="grid">
-            <from  onSubmit={signup}>
-            <form  className="form login" >
-            <div className="form__field">
-                <label htmlFor="login__username"><svg className="icon">
+            <from  >
+            <form  className="form login"  onSubmit={signup} >
+            <div className="form__field" name="Username">
+                <label htmlFor="login__username" name="Username"><svg className="icon" name="Username">
                 <use xlinkHref="#icon-user" />
-                   </svg><span className="hidden">Username</span></label>
-                 <input autoComplete="username" id="login__username" type="text" name="Username" className="form__input" placeholder="Username" required />
+                   </svg><span className="hidden" name="Username">Username</span></label>
+                 <input autoComplete="username" id="login__username" type="text" name="Username" className="form__input" placeholder="Username" required onChange={(e) => setUsername(e.target.value)} />
               </div>
               <div className="form__field">
                 <label htmlFor="login__username"><svg className="icon">
                  <MdEmail/>
                    </svg><span className="hidden">Email</span></label>
-                 <input autoComplete="username" id="login__username" type="text" name="email" className="form__input" placeholder="email" required />
+                 <input autoComplete="username" id="login__username" type="text" name="email" className="form__input" placeholder="email" required onChange={(e) => setEmail(e.target.value)}/>
               </div>
               <div className="form__field">
                 <label htmlFor="login__password"><svg className="icon">
                     <use xlinkHref="#icon-lock" />
                   </svg><span className="hidden">Password</span></label>
-                <input id="login__password" type="password" name="password" className="form__input" placeholder="Password" required />
+                <input id="login__password" type="password" name="password" className="form__input" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
               </div>
               <div className="form__field">
                 <label htmlFor="login__password"><svg className="icon">
                     <use xlinkHref="#icon-lock" />
                   </svg><span className="hidden">Confirm Password</span></label>
-                <input id="login__password" type="password" name="password" className="form__input" placeholder="Confirm Password" required />
+                <input id="login__password" type="password" name="password" className="form__input" placeholder="Confirm Password" required onChange={(e) => setPassword2(e.target.value)}/>
               </div>
               
                 
