@@ -18,15 +18,15 @@ const Advices = () => {
           let s = result.data.weight / (result.data.height/100)**2;
           console.log(s);
           if (s < 18.5) setStatus("underweight") 
-           if(s < 18.5) setMassig("اسمن")           
+           if(s < 18.5) setMassig("NOT GOOD")           
           
 
           if (s > 18.5  && s <= 25) setStatus("normal");
-          if(s > 18.5  && s <= 25) setMassig("كويس ياكلب")
+          if(s > 18.5  && s <= 25) setMassig("Great")
           if (s > 25 && s <= 30) setStatus("overweight");
-          if(s > 25 && s <= 30) setMassig("انحف يانعله")
+          if(s > 25 && s <= 30) setMassig("NOT GOOD")
           if (s > 30) setStatus("obesity");
-          if(s > 30) setMassig("غير مسموح للحيوانات البرية الدخول")
+          if(s > 30) setMassig("OMG")
         });
     } catch (error) {
       console.log(error);
