@@ -444,7 +444,7 @@
     /* 2 */
     .btn-2 {
     background: rgb(214, 213, 218);
-    background: linear-gradient(0deg, rgb(215, 210, 223) 0%, rgba(129,5,240,1) 100%);
+    background: linear-gradient(0deg, rgb(215, 210, 223) 0%, rgb(255 2 2) 100%);
     border: none;
     justify-content:center;
     

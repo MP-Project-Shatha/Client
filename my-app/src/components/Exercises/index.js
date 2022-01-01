@@ -39,7 +39,7 @@ const Exercises = () => {
             <div className="full">
               <img
                 className="imag"
-                src="https://explore.zoom.us/docs/image/postattendee/postattendee-onzoom.jpg"
+                src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
@@ -50,11 +50,27 @@ const Exercises = () => {
             <div />
           </div>
           <div>
-            <p> Abs</p>
+            
+            <p> Biceps </p>
             <div className="full">
               <img
                 className="imag"
-                src="https://explore.zoom.us/docs/image/postattendee/postattendee-onzoom.jpg"
+                src="https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                alt=""
+                path="images/"
+                onClick={() => {
+                  navigate(`/Exerciesdesc/Biceps`);
+                }}
+              />
+            </div>
+            <div />
+          </div>{" "}
+          <div>
+            <p> Abs </p>
+            <div className="full">
+              <img
+                className="imag"
+                src="https://images.pexels.com/photos/4162548/pexels-photo-4162548.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
@@ -65,210 +81,210 @@ const Exercises = () => {
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Adductors </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/136404/pexels-photo-136404.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Adductors`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Shoulders </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/6550851/pexels-photo-6550851.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Shoulders`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Chest </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/3837757/pexels-photo-3837757.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Chest`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Foreams </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Foreams`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Obliques </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/1111304/pexels-photo-1111304.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Obliques`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Qudas </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/5327534/pexels-photo-5327534.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Qudas`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Traps </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/703014/pexels-photo-703014.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Traps`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Triceps </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Triceps`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Abductors </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/7690207/pexels-photo-7690207.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Abductors`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Hamstrings </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/5327505/pexels-photo-5327505.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Hamstrings`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Calves </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/2204196/pexels-photo-2204196.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Calves`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Lats </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/3757934/pexels-photo-3757934.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Lats`);
                 }}
               />
             </div>
             <div />
           </div>{" "}
           <div>
-            <p> Cardio</p>
+            <p> Lower Back </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://images.pexels.com/photos/6493601/pexels-photo-6493601.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/LowerBack`);
                 }}
               />
             </div>
             <div />
-          </div>{" "}
+          </div>
           <div>
-            <p> Cardio</p>
+            <p> Glutes </p>
             <div className="full">
               <img
                 className="imag"
-                src=""
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpS21XFq33PYBpv572PXnzugTmPj3zJro0hg&usqp=CAU"
                 alt=""
                 path="images/"
                 onClick={() => {
-                  navigate(`/Exerciesdesc/Cardio`);
+                  navigate(`/Exerciesdesc/Glutes`);
                 }}
               />
             </div>
