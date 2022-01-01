@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
-
+import { RiArrowGoBackLine } from 'react-icons/ri';
+import "./style.css"
 const ForgotPass = () => {
   const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ const ForgotPass = () => {
     <div className="overlay">
       <video autoPlay muted loop id="video1">
         <source
-          src="https://media.istockphoto.com/videos/side-dolly-shot-young-strong-caucasian-athletic-sportsman-exercising-video-id1177079313"
+          src="https://player.vimeo.com/external/542601017.sd.mp4?s=2efb45620d5cd4b587dcb66202ea1f34940424b4&profile_id=164&oauth2_token_id=57447761"
           type="video/webm"
         />
         Your browser does not support HTML5 video.
@@ -38,7 +39,7 @@ const ForgotPass = () => {
       <div className="overlay__inner">
         <h1 className="overlay__title">
           <br />
-          <span className="text-gradient">Forget</span>
+          <span className="text-gradient" id="but-lift">Forget</span>
         </h1>
 
         <div className="align">
@@ -62,22 +63,26 @@ const ForgotPass = () => {
                 />
               </div>
 
-              <button
+              {/* <button
                 className="text-gradient"
                 type="submit"
                 defaultValue="Sign In"
               >
                 send
-              </button>
+              </button> */}
+               <div className="group">
+                  <button class="custom-btn btn-2" id="but-lift"   type="submit"
+                defaultValue="send">send</button>
+                </div>
             </form>
             <p>{err}</p>
-            <button
+            <h1 class="icon-back"
               onClick={() => {
                 navigate("/");
               }}
             >
-              Back
-            </button>
+              <RiArrowGoBackLine/>
+            </h1>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" className="icons">
             &gt;

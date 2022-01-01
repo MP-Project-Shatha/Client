@@ -3,6 +3,8 @@ import axios from "axios";
 import "./style.css";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
+import Navbar from "../Navbar";
+
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const Profile = () => {
   const navigate = useNavigate();
@@ -61,6 +63,8 @@ const Profile = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="profile">
       {account.map((item, i) => {
         console.log(item.img);
@@ -173,10 +177,11 @@ const Profile = () => {
                       </tr>
                       <tr>
                         <td>nutrition</td>
-                        {/* <td>:</td>
-                        <td>{item.nutrition=="High nutrition" <p>High</p>:<></>}</td>
-                        <td>{item.nutrition==1.4?<p>Average</p>:<></>}</td>
-                        <td>{item.nutrition==1.3?<p>low</p>:<></>}</td> */}
+                        <td>:</td>
+                        {console.log(item)}
+                        <td>{item.nutrition=="HighNutrition"? <p>High Nutrition</p>:<></>}</td>
+                        <td>{item.nutrition=="AverageNutrition"?<p>Average Nutritio</p>:<></>}</td>
+                        <td>{item.nutrition=="LowNutrition"?<p>Low Nutritio</p>:<></>}</td>
                       </tr>
                      
                     </tbody>
@@ -188,6 +193,7 @@ const Profile = () => {
         );
       })}
     </div>
+    </>
   );
 };
 

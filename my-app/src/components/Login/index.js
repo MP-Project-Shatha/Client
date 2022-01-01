@@ -3,10 +3,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 import { MdEmail } from "react-icons/md";
+import { RiArrowGoBackLine } from 'react-icons/ri';
+
 const Login = () => {
   const navigate = useNavigate();
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [err, setErr] = useState("");
+  
+
   const login = async (e) => {
     try {
       e.preventDefault();
@@ -32,7 +36,7 @@ const Login = () => {
       <div className="overlay">
         <video autoPlay muted loop id="video1">
           <source
-            src="https://media.istockphoto.com/videos/side-dolly-shot-young-strong-caucasian-athletic-sportsman-exercising-video-id1177079313"
+            src="https://player.vimeo.com/external/433938674.sd.mp4?s=71fbc7c7a37f1123d6884b060f0304cdcf8ac988&profile_id=139&oauth2_token_id=57447761"
             type="video/webm"
           />
           Your browser does not support HTML5 video.
@@ -40,7 +44,9 @@ const Login = () => {
         <div className="overlay__inner">
           <h1 className="overlay__title">
             <br />
-            <span className="text-gradient">Login</span>
+            <span className="text-gradient" id="but-lift">
+              Login
+            </span>
           </h1>
 
           <div className="align">
@@ -79,15 +85,12 @@ const Login = () => {
                     required
                   />
                 </div>
-                {/* <button
-                    className="text-gradient"
-                    type="submit"
-                    defaultValue="Sign In"
-                  >
-                    login
-                  </button> */}
+
                 <div className="group">
-                  <button class="custom-btn btn-2">Read More</button>
+                  <button class="custom-btn btn-2" id="but-lift">
+                    {" "}
+                    login
+                  </button>
                 </div>
               </form>
 
@@ -103,7 +106,13 @@ const Login = () => {
                   <use xlinkHref="#icon-arrow-right" />
                 </svg>
               </p>
-              <button onClick={() => navigate("/")}>back</button>
+              <h1 class="icon-back"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              <RiArrowGoBackLine/>
+            </h1>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" className="icons">
               &gt;

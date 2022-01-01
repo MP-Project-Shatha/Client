@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineLogout } from "react-icons/ai";
 
 import logo from "./../../imges/logof.png";
 import "./style.css";
@@ -41,10 +42,13 @@ const Navbar = () => {
             </li>
 
             <li>
-              <button className="logout-btn" onClick={logout}>
+              {/* <button className="logout-btn" onClick={logout}>
                 {" "}
-                logout
-              </button>
+               <AiOutlineLogout/>
+              </button> */}
+              <h1 className="logout-btn" onClick={logout}>
+              <AiOutlineLogout/>
+              </h1>
             </li>
           </>
         ) : (

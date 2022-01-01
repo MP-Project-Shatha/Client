@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import {MdEmail} from "react-icons/md"
+import { RiArrowGoBackLine } from 'react-icons/ri';
 
 
 import "./style.css";
@@ -45,14 +46,15 @@ const Register = () => {
 
     <div className="overlay">
     <video autoPlay muted loop id="video1">
-      <source src="https://ak.picdn.net/shutterstock/videos/1028252639/preview/stock-footage-girl-in-the-gym-fitness-training-workout-sport.webm" type="video/webm" />
+      <source src="https://player.vimeo.com/external/567369323.sd.mp4?s=bbe1ca68c5b709053efbdeb735855d3754ad14ef&profile_id=164&oauth2_token_id=57447761" type="video/webm" />
       Your browser does not support HTML5 video.
     </video>
+    
       <div className="overlay__inner">
     
         <h1 className="overlay__title">
         <br />
-          <span className="text-gradient">Register</span>
+          <span className="text-gradient" id="but-lift">Register</span>
         </h1>
       
         <div className="align">
@@ -85,15 +87,28 @@ const Register = () => {
               </div>
               
                 
-                <button className="text-gradient" type="submit" defaultValue="Sign In" >sign up</button> 
+                {/* <button className="text-gradient" type="submit" defaultValue="Sign In" >sign up</button>  */}
+                <div className="group">
+                  <button class="custom-btn btn-2" id="but-lift" type="submit" defaultValue="Sign In">sign up</button>
+                </div>
            
             </form>
             </from>
+            
             <p className="text--center">Not a member? <a href={"/login"}>Login now</a> <svg className="icon">
                 <use xlinkHref="#icon-arrow-right" />
-              </svg></p>
-              <button onClick={()=>navigate('/')} >back</button>
+              </svg>
+              <h1 className="backIcon"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              <RiArrowGoBackLine/>
+            </h1>
+              </p>
+           
           </div>
+          
           <svg xmlns="http://www.w3.org/2000/svg" className="icons">
             &gt;
             <symbol id="icon-lock" viewBox="0 0 1792 1792">
