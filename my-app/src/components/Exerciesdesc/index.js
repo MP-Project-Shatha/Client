@@ -14,8 +14,8 @@ const Exerciesdesc = () => {
     try {
       axios.get(`${BASE_URL}/allExercises`).then((result) => {
         if (result.data) {
-          console.log(result.data);
-          setWorkout(result.data.filter((i) => i._id == param.id));
+          console.log(result.data.filter((i) => i.type == param.id));
+          setWorkout(result.data.filter((i) => i.type == param.id));
         }
       });
     } catch (error) {

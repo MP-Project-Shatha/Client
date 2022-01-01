@@ -4,6 +4,45 @@
     border-bottom: solid 0.1px #d2d2d2;
     border-radius: 10px;
   }
-  #login__password{
-    background-color:rgb(241, 188, 188);
+.infoInput{
+    background-color:rgb(241, 240, 240);
+    border-radius: 10px;
   }
+  .overlay-info{
+    width: 100%;
+    max-width: 1140px;
+    max-height: 640px;
+    margin-top: 2vh;
+    padding: 8rem 6rem;
+    display: flex;
+    align-items: center;
+    background: rgb(255 255 255 / 36%);
+    box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    grid: fixed;
+  }
+  
+    /* 2 */
+    .btn-22 {
+      background: rgb(214, 213, 218);
+      background: linear-gradient(0deg, rgb(215, 210, 223) 0%, rgb(240, 5, 5) 100%);
+      border: none;
+      justify-content:center;
+      
+      }
+      .btn-22:before {
+      height: 0%;
+      width: 0%;
+      justify-content:center;
+      }
+      .btn-22:hover {
+      box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+        inset -4px -4px 6px 0 rgba(255,255,255,.2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+      }
+      #but-lift-2{
+        margin-left:23%;
+      }
+      
