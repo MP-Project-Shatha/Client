@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import Navbar from "../Navbar";
 import "./style.css";
 
 const Exerciesdesc = () => {
@@ -28,6 +29,9 @@ const Exerciesdesc = () => {
   }, []);
 
   return (
+    <>
+    <Navbar />
+
     <div className="profile">
       <div className="card-show">
       {workout.map((item, i) => {
@@ -36,7 +40,9 @@ const Exerciesdesc = () => {
             <tr>
               <td>{item.title}</td>
             </tr>
-            <video src={item.video} controls />
+            <div>
+            <video className="vWorkout" src={item.video} controls />
+            </div>
             <tr>
               <td>{item.desc}</td>
             </tr>
@@ -45,6 +51,8 @@ const Exerciesdesc = () => {
       })}
       </div>
     </div>
+    </>
   );
 };
+
 export default Exerciesdesc;
