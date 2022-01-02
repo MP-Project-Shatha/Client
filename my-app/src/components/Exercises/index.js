@@ -35,6 +35,7 @@ const Exercises = () => {
       <div className="profile">
         <div className="mainwrapper">
           <div>
+            
             <p> Cardio</p>
             <div className="full">
               <img
@@ -280,7 +281,7 @@ const Exercises = () => {
             <div className="full">
               <img
                 className="imag"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpS21XFq33PYBpv572PXnzugTmPj3zJro0hg&usqp=CAU"
+                src="https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt=""
                 path="images/"
                 onClick={() => {

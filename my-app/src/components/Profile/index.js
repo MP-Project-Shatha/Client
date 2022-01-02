@@ -14,10 +14,11 @@ const Profile = () => {
   const [editEmail, setEmail] = useState("");
 
   const getData = async () => {
-    console.log(local);
+    // console.log(local);
     if (local.result) {
-      const item = await axios.get(`${BASE_URL}/email/${local.result.email}`);
-
+      // const item = await axios.get(`${BASE_URL}/email/${local.result.email}`);
+      const item = await axios.get(`${BASE_URL}/getInfo/${local.result._id}`);
+      console.log(item.data.act);
       setAccount(item.data);
     } else {
       // navigate('/home')
@@ -30,6 +31,7 @@ const Profile = () => {
 
   useEffect(() => {
     getDataLS();
+    getData();
   }, []);
   useEffect(() => {
     getData();
@@ -64,135 +66,138 @@ const Profile = () => {
 
   return (
     <>
-    <Navbar />
-    <div className="profile">
-      {account.map((item, i) => {
-        console.log(item.img);
-        return (
-          <div>
-
-
-
-
-            <div className="main">
-              <h2>PROFILE</h2>
-              <div className="card">
-              <div >
-              <div className="profile">
-                <img
-                  src={item.img}
-                  alt=""
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className="sidenav-url"></div>
-            </div>
-                <div className="card-body">
-                  <i className="fa fa-pen fa-xs edit" />
-                  <table>
-
-                    <tbody>
-                      <tr>
-                        <td>UserName</td>
-                        <td>:</td>
-                        <td>{item.username}</td>
-                      </tr>
-                      <tr>
-                        <td>Email</td>
-                        <td>:</td>
-                        <td>{item.email}</td>
-                      </tr>
-                      <tr>
-                        <td>weight</td>
-                        <td>:</td>
-                        <td>{item.weight}</td>
-                      </tr>
-                      <tr>
-                        <td>fatpercentage</td>
-                        <td>:</td>
-                        <td>{item.fatpercentage}</td>
-                      </tr>
-                      <tr>
-                        <td>Age</td>
-                        <td>:</td>
-                        <td>{item.age}</td>
-                      </tr>
-                      <tr>
-                        <td>weight</td>
-                        <td>:</td>
-                        <td>{item.weight}</td>
-                      </tr>
-                      <tr>
-                        <td>height</td>
-                        <td>:</td>
-                        <td>{item.height}</td>
-                      </tr>
-                      <tr>
-                        <td>wrist</td>
-                        <td>:</td>
-                        <td>{item.wrist}</td>
-                      </tr>
-                      <tr>
-                        <td>chest</td>
-                        <td>:</td>
-                        <td>{item.chest}</td>
-                      </tr>
-                      <tr>
-                        <td>pelvis</td>
-                        <td>:</td>
-                        <td>{item.pelvis}</td>
-                      </tr>
-                      <tr>
-                        <td>ankle</td>
-                        <td>:</td>
-                        <td>{item.ankle}</td>
-                      </tr>
-                      <tr>
-                        <td>armdiameter</td>
-                        <td>:</td>
-                        <td>{item.armdiameter}</td>
-                      </tr>
-                      <tr>
-                        <td>musclediameter</td>
-                        <td>:</td>
-                        <td>{item.musclediameter}</td>
-                      </tr>
-                      <tr>
-                        <td>fatpercentage</td>
-                        <td>:</td>
-                        <td>{item.fatpercentage}</td>
-                      </tr>
-                      <tr>
-                        <td>bonepercentage</td>
-                        <td>:</td>
-                        <td>{item.bonepercentage}</td>
-                      </tr>
-                      <tr>
-                        <td>active</td>
-                        <td>:</td>
-                        <td>{item.active==1.5?<p>active</p>:<></>}</td>
-                        <td>{item.active==1.4?<p>Average</p>:<></>}</td>
-                        <td>{item.active==1.3?<p>low</p>:<></>}</td>
-                      </tr>
-                      <tr>
-                        <td>nutrition</td>
-                        <td>:</td>
-                        {console.log(item)}
-                        <td>{item.nutrition=="HighNutrition"? <p>High Nutrition</p>:<></>}</td>
-                        <td>{item.nutrition=="AverageNutrition"?<p>Average Nutritio</p>:<></>}</td>
-                        <td>{item.nutrition=="LowNutrition"?<p>Low Nutritio</p>:<></>}</td>
-                      </tr>
-                     
-                    </tbody>
-                  </table>
+      <Navbar />
+      <div className="profile">
+        <div>
+          <div className="main">
+            <div className="card">
+              <div>
+                <div className="profile">
+                  {/* <img
+                    clssName="userImg"
+                    src={account.img}
+                    alt=""
+                    width={200}
+                    height={200}
+                  /> */}
                 </div>
+                <div className="sidenav-url">
+                  {" "}
+                  <div>
+                    <img
+                      src="https://images.pexels.com/photos/7031705/pexels-photo-7031705.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                      id="video1"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="card-body">
+                <i className="fa fa-pen fa-xs edit" />
+                <table className="listprofile">
+                  <tbody>
+                    <tr>
+                      <td>UserName:</td>
+                      <td>{account.username}</td>
+                    </tr>
+                    <tr>
+                      <td>Email:</td>
+
+                      <td>{account.email}</td>
+                    </tr>
+                    <tr>
+                      <td>Weight:</td>
+
+                      <td>{account.weight}</td>
+                    </tr>
+                    <tr>
+                      <td>Age:</td>
+
+                      <td>{account.age}</td>
+                    </tr>
+                    <tr>
+                      <td>Height:</td>
+
+                      <td>{account.height}</td>
+                    </tr>
+                    <tr>
+                      <td>Wrist:</td>
+
+                      <td>{account.wrist}</td>
+                    </tr>
+                    <tr>
+                      <td>Chest:</td>
+
+                      <td>{account.chest}</td>
+                    </tr>
+                    <tr>
+                      <td>Pelvis:</td>
+
+                      <td>{account.pelvis}</td>
+                    </tr>
+                    <tr>
+                      <td>Ankle:</td>
+
+                      <td>{account.ankle}</td>
+                    </tr>
+                    <tr>
+                      <td>Armdiameter:</td>
+
+                      <td>{account.armdiameter}</td>
+                    </tr>
+                    <tr>
+                      <td>Musclediameter:</td>
+
+                      <td>{account.musclediameter}</td>
+                    </tr>
+                    <tr>
+                      <td>Fatpercentage:</td>
+
+                      <td>{account.fatpercentage}</td>
+                    </tr>
+                    <tr>
+                      <td>Bonepercentage:</td>
+
+                      <td>{account.bonepercentage}</td>
+                    </tr>
+                    <tr>
+                      <td>Active:</td>
+
+                      <td>{account.active == 1.5 ? <p>Active</p> : <></>}</td>
+                      <td>{account.active == 1.4 ? <p>Average active</p> : <></>}</td>
+                      <td>{account.active == 1.3 ? <p>Inactive</p> : <></>}</td>
+                    </tr>
+                    <tr>
+                      <td>Nutrition:</td>
+
+                      <td>
+                        {account.nutrition == "HighNutrition" ? (
+                          <p>High Nutrition</p>
+                        ) : (
+                          <></>
+                        )}
+                      </td>
+                      <td>
+                        {account.nutrition == "AverageNutrition" ? (
+                          <p>Average Nutritio</p>
+                        ) : (
+                          <></>
+                        )}
+                      </td>
+                      <td>
+                        {account.nutrition == "LowNutrition" ? (
+                          <p>Low Nutritio</p>
+                        ) : (
+                          <></>
+                        )}
+                      </td>
+                    </tr>
+                 </tbody>
+                </table>
               </div>
             </div>
           </div>
-        );
-      })}
-    </div>
+        </div>
+      </div>
     </>
   );
 };

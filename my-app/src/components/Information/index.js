@@ -36,6 +36,7 @@ function Information() {
         bonepercentage: e.target.Bonepercentage.value,
         active: e.target.Active.value,
         nutrition: e.target.Nutrition.value,
+        armdiameter: e.target.Armdiameter.value,
       },
       { withCredentials: true }
     );
@@ -79,7 +80,7 @@ function Information() {
           <label htmlFor="Age">Age:</label>
           <br />
           {/*  // يحفظ القيمة */}
-          <input className="infoInput" type="Age" name="Age" defaultValue="" />
+          <input className="infoInput" type="Age" name="Age"/>
           <br />
           <label htmlFor="Weight">Weight:</label>
           <br />
@@ -113,6 +114,14 @@ function Information() {
           <label htmlFor="Ankle">Ankle:</label>
           <br />
           <input className="infoInput" type="Ankle" name="Ankle" />
+          <br />
+          <label htmlFor="Armdiameter">Armdiameter:</label>
+          <br />
+          <input
+            className="infoInput"
+            type="Bonepercentage"
+            name="Armdiameter"
+          />
           <br />
           <label htmlFor="Muscledimeter">Muscledimeter:</label>
           <br />
