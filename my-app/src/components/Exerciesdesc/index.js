@@ -9,7 +9,7 @@ const Exerciesdesc = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
   const [workout, setWorkout] = useState([]);
-  // console.log(JSON.parse(localStorage.getItem("user")).result._id);
+  const [search, setSearch] = useState("");
   console.log(param.id);
   const getPosts = () => {
     try {
@@ -33,10 +33,22 @@ const Exerciesdesc = () => {
     <Navbar />
 
     <div className="profile">
+    <div>
+          <input type="text" name="search" id="search" onChange={(e)=>setSearch(e.target.value)}/>
+        </div>
       <div className="card-show">
-      {workout.map((item, i) => {
+      
+      {workout.length && 
+      
+      workout.filter((ele)=>{
+        if (search == "") {
+          return ele
+        } else if (ele.title.toLowerCase().includes(search.toLowerCase())) {
+          return ele
+        }
+      }).map((item, i) => {
         return (
-          <div>
+          <div key={i}>
             <tr>
               <td>{item.title}</td>
             </tr>

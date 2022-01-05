@@ -2,17 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-import schedule from "node-schedule";
 import Navbar from "../Navbar";
 
 function Information() {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
-  // const day = day(0-7);
-
-  // schedule.scheduleJob(day, () => {
-  //   addInformation();
-  //  });
 
   const addInformation = async (e) => {
     e.preventDefault();
@@ -20,7 +14,7 @@ function Information() {
     const result = await axios.post(
       `${BASE_URL}/addInfo`,
       {
-        id: user.result._id,
+        // id: user.result._id,
         gender: e.target.Gender.value,
         age: e.target.Age.value,
         weight: e.target.Weight.value,
@@ -41,7 +35,6 @@ function Information() {
       { withCredentials: true }
     );
     navigate("/Advices");
-    // console.log(result.data);
     if (result.data == "Done") {
       navigate("/Advices");
     }
@@ -67,8 +60,7 @@ function Information() {
         <form onSubmit={addInformation}>
           <label htmlFor="Gender">Gender:</label>
           <br />
-          {/* <option value="Female">Female</option>
-          <option value="Male ">Male</option> */}
+
           <div name="Gender">
             <input type="radio" name="Gender" value="Female" />
             <label for="age1">Female</label>
@@ -79,8 +71,8 @@ function Information() {
           <br />
           <label htmlFor="Age">Age:</label>
           <br />
-          {/*  // يحفظ القيمة */}
-          <input className="infoInput" type="Age" name="Age"/>
+
+          <input className="infoInput" type="Age" name="Age" />
           <br />
           <label htmlFor="Weight">Weight:</label>
           <br />
@@ -159,9 +151,8 @@ function Information() {
             <option value="AverageNutrition">Average nutrition</option>
             <option value="LowNutrition">Low nutrition</option>
           </select>
-          {/* <button type="submit">Submit</button> */}
           <div className="group">
-            <button class="custom-btn btn-22" id="but-lift-2"  type="submit">
+            <button class="custom-btn btn-22" id="but-lift-2" type="submit">
               {" "}
               Submit
             </button>

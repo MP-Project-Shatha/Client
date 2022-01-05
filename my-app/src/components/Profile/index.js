@@ -7,6 +7,7 @@ import Navbar from "../Navbar";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const Profile = () => {
+  const [logged, setLogged] = useState(false);
   const navigate = useNavigate();
   const [account, setAccount] = useState([]);
   const [local, setLocal] = useState([]);
