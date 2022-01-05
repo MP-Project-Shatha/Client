@@ -1,13 +1,14 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
-
 import logo from "./../../imges/logof.png";
+
 import "./style.css";
+
 const Navbar = () => {
   const navigate = useNavigate();
-
+  var current = useLocation().pathname;
   const [logged, setLogged] = useState(false);
 
   useEffect(() => {
@@ -20,52 +21,108 @@ const Navbar = () => {
     navigate("/");
   };
   return (
-    <div>
-      <ul className="ul">
-        <li>
-          <Link to={"/"}>Home</Link>
-        </li>
-        <li>
-          <Link to="/Exercises"> Exercises </Link>
-        </li>
-        {logged ? (
-          <>
-            <li>
-              <Link to="/Profile"> Profile</Link>
+    <header className="navbar-header">
+      <div className="header-container">
+        <div className="logo">
+          <img
+            src={require("../../imges/logo.png")}
+            alt=""
+            className="logo-image"
+          />
+        </div>
+        <div className="navbar-container">
+          <ul className="navbar-list">
+            <li className="navbar-item">
+              <Link
+                className={`navbar-link ${
+                  current === "/" ? "navbar-link-current" : ""
+                }`}
+                to={"/"}
+              >
+                Home
+              </Link>
             </li>
-
-            <li>
-              <Link to="/Advices"> Advices</Link>
-            </li>
-            <li>
-              <Link to="/Information"> Information </Link>
-            </li>
-
-            <li>
-              {/* <button className="logout-btn" onClick={logout}>
+            <li className={"navbar-item"}>
+              <Link
+                className={`navbar-link ${
+                  current === "/Exercises" ? "navbar-link-current" : ""
+                }`}
+                to="/Exercises"
+              >
                 {" "}
-               <AiOutlineLogout/>
-              </button> */}
-              <h1 className="logout-btn" onClick={logout}>
-              <AiOutlineLogout/>
-              </h1>
+                Exercises{" "}
+              </Link>
             </li>
-          </>
-        ) : (
-          <>
-            <li>
-              <Link to="/register">Register</Link>
+            <li className="navbar-item">
+              <Link
+                className={`navbar-link ${
+                  current === "/Profile" ? "navbar-link-current" : ""
+                }`}
+                to="/Profile"
+              >
+                {" "}
+                Profile
+              </Link>
             </li>
-            <li>
-              <Link to={"/login"}> Login</Link>
-            </li>
-          </>
-        )}
-      </ul>
-      {/* <h1 classNmae="logo">
-        <img src={logo} />
-      </h1> */}
-    </div>
+            {logged ? (
+              <>
+                <li className="navbar-item">
+                  <Link
+                    className={`navbar-link ${
+                      current === "/Advices" ? "navbar-link-current" : ""
+                    }`}
+                    to="/Advices"
+                  >
+                    {" "}
+                    Advices
+                  </Link>
+                </li>
+                <li className="navbar-item">
+                  <Link
+                    className={`navbar-link ${
+                      current === "/Information" ? "navbar-link-current" : ""
+                    }`}
+                    to="/Information"
+                  >
+                    {" "}
+                    Information{" "}
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <></>
+            )}
+          </ul>
+        </div>
+        <div className="login-register">
+          <ul className={"navbar-list"}>
+            {logged ? (
+              <>
+                <li className={"navbar-item"}>
+                  <button className="logout-btn" onClick={logout}>
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className={"navbar-item register-btn"}>
+                  <Link className="navbar-link" to="/register">
+                    Register
+                  </Link>
+                </li>
+                <li className={"navbar-item login-btn"}>
+                  <Link className="navbar-link" to={"/login"}>
+                    {" "}
+                    Login
+                  </Link>
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
+      </div>
+    </header>
   );
 };
 

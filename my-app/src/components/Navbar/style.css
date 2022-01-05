@@ -1,13 +1,90 @@
+.navbar-header{
+    display: inline;
+    width: 100vw;
+    height: auto;
+    background: rgba(0, 0, 0, 0.80);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 0.9fr;
+    align-content: end;
+    align-items: end;
+    padding: 6px 64px;
+}
+.logo-image{
+    width: 60%;
+    height: auto;
+}
+.navbar-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.navbar-list{
+    list-style: none;
+    display: flex;
+    margin: 0 auto;
+    gap: 38px;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background: none;
+}
+.navbar-item{
+    text-transform: uppercase;
+    transition: all !important;
+}
+.navbar-item:hover{border: none}
 
-.ul li {
-  display: inline-block;
-  margin: 20px;
-  padding: 5px;
+
+.navbar-link{
+    font-size:24px;
+    color: white;
+    text-decoration: none;
+
 }
-.ul li:hover {
-  background-color: rgba(53, 34, 34, 0.164);
-  border-radius: 20px;
+.navbar-link:hover{
+    text-decoration: none;
+    color: orangered;
 }
-/* .logo{
-background-color: rgb(0, 0, 0);
-} */
+.navbar-item:hover .navbar-link{
+    transform: scaleX(1.05);
+    border: none;
+}
+
+.navbar-link-current{
+    color: orangered;
+}
+.login-register .navbar-list{
+    flex-wrap: nowrap;
+}
+
+.login-register .navbar-item{
+    padding: 8px 16px;
+    background: orangered;
+    border-radius: 6px;
+}
+.login-register .navbar-link:hover{
+    color: white;
+}
+.login-register .register-btn{
+    background: none;
+    border: 1px orangered solid;
+}
+.login-register .register-btn:hover {
+    background: orangered;
+}
+.login-register .login-btn:hover {
+    background: red;
+}
+.logout-btn{
+    border: none;
+    background: none;
+    color: white;
+    font-size: 16px;
+    cursor: default;
+    margin: 0;
+}

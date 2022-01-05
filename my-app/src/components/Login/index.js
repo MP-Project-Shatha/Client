@@ -1,30 +1,53 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import { MdEmail } from "react-icons/md";
-import { RiArrowGoBackLine } from 'react-icons/ri';
+import { RiArrowGoBackLine } from "react-icons/ri";
+import Navbar from "../Navbar";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const navigate = useNavigate();
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [err, setErr] = useState("");
-  
+  const [test, setTest] = useState([]);
+  let showForgotDiagram = false;
+
+  let massage = "";
 
   const login = async (e) => {
     try {
+      console.log(e);
+      console.log(e.target[0].value);
+      console.log(e.target[1].value);
+
       e.preventDefault();
       const result = await axios.post(`${BASE_URL}/login`, {
-        email: e.target.email.value,
-        password: e.target.password.value,
+        email: e.target[0].value,
+        password: e.target[1].value,
       });
+      // console.log(result.data);
+      // massage = result.data;
+
+      // setErr(massage);
+      // setErr(result.data);
+      setTest(result.data);
       console.log(result.data);
 
-      if (result.data?.token) {
-        setErr(result.data);
-
+      if (result.data) {
+        console.log("GGGGG");
         localStorage.setItem("user", JSON.stringify(result.data));
-        navigate("/information");
+        navigate("/");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
+        // showMassage = false
       }
     } catch (error) {
       console.log(error);
@@ -33,98 +56,77 @@ const Login = () => {
 
   return (
     <>
-      <div className="overlay">
-        <video autoPlay muted loop id="video1">
+      <Navbar />
+      <div className="login-box-container">
+        <video autoPlay muted loop className="login-background-video">
           <source
             src="https://player.vimeo.com/external/433938674.sd.mp4?s=71fbc7c7a37f1123d6884b060f0304cdcf8ac988&profile_id=139&oauth2_token_id=57447761"
             type="video/webm"
           />
           Your browser does not support HTML5 video.
         </video>
-        <div className="overlay__inner">
-          <h1 className="overlay__title">
-            <br />
-            <span className="text-gradient" id="but-lift">
-              Login
-            </span>
-          </h1>
+        <section className="section-login">
+          <div className="login-container">
+            <h1 className={"login-title"}>Login</h1>
+            <p className={"login-massage"}>
+              Welcome back! Please enter your details.
+            </p>
 
-          <div className="align">
-            <div className="grid">
-              <form className="form login" onSubmit={login}>
-                <div className="form__field">
-                  <label htmlFor="login__username">
-                    <svg className="icon">
-                      <MdEmail />
-                    </svg>
-                    <span className="hidden">Email</span>
-                  </label>
-                  <input
-                    autoComplete="username"
-                    id="login__username"
-                    type="text"
-                    name="email"
-                    className="form__input"
-                    placeholder="email"
-                    required
-                  />
-                </div>
-                <div className="form__field">
-                  <label htmlFor="login__password">
-                    <svg className="icon">
-                      <use xlinkHref="#icon-lock" />
-                    </svg>
-                    <span className="hidden">Password</span>
-                  </label>
-                  <input
-                    id="login__password"
-                    type="password"
-                    name="password"
-                    className="form__input"
-                    placeholder="Password"
-                    required
-                  />
-                </div>
+            <form className="login-form" onSubmit={login}>
+              <div className="input-box">
+                <p className="input-label">Email</p>
+                <input
+                  className={"input-field"}
+                  autoComplete="username"
+                  type="text"
+                  name="email"
+                  placeholder="example@gmail.com"
+                  required
+                />
+              </div>
+              <div className="input-box">
+                <p className="input-label">Password</p>
+                <input
+                  className={"input-field"}
+                  type="password"
+                  name="password"
+                  placeholder="ex. '12345678'"
+                  required
+                />
+              </div>
 
-                <div className="group">
-                  <button class="custom-btn btn-2" id="but-lift">
-                    {" "}
-                    login
-                  </button>
-                </div>
-              </form>
+              <div className="forgot-submit">
+                <input type="submit" className={"submit-btn"} value={"Login"} />
+                <Link className={"forget-pass"} to={"/forgot"}>
+                  Forget Password?
+                </Link>
+              </div>
+            </form>
 
-              <p className="text--center">
-                Not a member? <a href={"/register"}>Sign up now</a>{" "}
-                <svg className="icon">
-                  <use xlinkHref="#icon-arrow-right" />
-                </svg>
-              </p>
-              <p className="text--center">
-                forget password? <a href={"/forgot"}>forget password</a>{" "}
-                <svg className="icon">
-                  <use xlinkHref="#icon-arrow-right" />
-                </svg>
-              </p>
-              <h1 class="icon-back"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              <RiArrowGoBackLine/>
-            </h1>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" className="icons">
-              &gt;
-              <symbol id="icon-lock" viewBox="0 0 1792 1792">
-                <path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z" />
-              </symbol>
-              <symbol id="icon-user" viewBox="0 0 1792 1792">
-                <path d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z" />
-              </symbol>
-            </svg>
+            <p className="not-member">
+              <i>Don't have an account?</i>
+              <Link className={"forget-pass"} to={"/register"}>
+                {" "}
+                Sign up
+              </Link>
+              <p>{err}</p>
+            </p>
           </div>
-        </div>
+          <div className={"section-login-image"}>
+            <p>
+              you don't find
+              <br />
+              <span>willpower</span>
+              <br />
+              you create it
+            </p>
+            <img
+              src={require("../../imges/login-img.jpg")}
+              alt=""
+              className=""
+            />
+          </div>
+        </section>
       </div>
     </>
   );
