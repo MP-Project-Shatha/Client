@@ -15,6 +15,7 @@ const Exercises = () => {
       axios.get(`${BASE_URL}/allExercises`).then((result) => {
         if (result.data) {
           console.log(result.data);
+          console.log(result);
           setCardsExe(result.data);
         }
       });
