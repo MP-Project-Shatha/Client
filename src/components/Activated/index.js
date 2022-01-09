@@ -5,7 +5,7 @@ import axios from "axios";
 const Activated = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
+// 
   const token = location.pathname.split("/")[2];
   console.log(token);
   const BASE_URL = process.env.REACT_APP_BASE_URL;
