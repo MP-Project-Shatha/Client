@@ -4,7 +4,7 @@ import "./style.css";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar";
-
+// 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const Profile = () => {
   const [logged, setLogged] = useState(false);
