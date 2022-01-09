@@ -1,0 +1,146 @@
+body{
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.login-box-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.login-background-video {
+    overflow: hidden;
+    width: 150%;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -10;
+}
+
+.login-container {
+    background: white;
+}
+
+.section-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 960px;
+    border-radius: 16px;
+    background: white;
+    overflow: hidden;
+    margin: 6% 0 0 0 ;
+}
+
+.section-login-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-login-image p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+    text-transform: uppercase;
+    font-weight: bold;
+    word-spacing: 6px;
+    letter-spacing: 3px;
+    width: 150%;
+    text-align: center;
+    line-height: 32px;
+    font-family: serif;
+    font-size: 22px;
+    background: white;
+    color: orangered;
+}
+
+.section-login-image span {
+    font-size: 42px;
+    color: black;
+    font-weight: bolder;
+}
+
+.section-login-image img {
+    width: 100%;
+    filter: brightness(0.5) grayscale(0);
+    border-radius: 0 10px 10px 0;
+    background: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(9% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: -1;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.login-container {
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    justify-content: space-around;
+}
+
+.login-container h1 {
+    color: #505050;
+}
+
+.login-container p {
+    color: #a7a7a7;
+    align-self: start;
+}
+
+.input-field {
+    width: 100%;
+    border: none;
+    border-bottom: 1px orangered solid;
+    padding: 8px 0;
+    outline: none;
+    font-size: 16px;
+}
+
+.forgot-submit {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    justify-items: center;
+}
+
+.submit-btn {
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background: orangered;
+    border-radius: 6px;
+    padding: 8px 0;
+    letter-spacing: 3px;
+    font-weight: bolder;
+}
+
+.forget-pass, .forget-pass:visited, .forget-pass:hover {
+    color: orangered;
+    text-decoration: none;
+    margin-top: 16px;
+}
+
+.not-member {
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+    letter-spacing: 2px;
+    display: inline-block;
+
+
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+}
