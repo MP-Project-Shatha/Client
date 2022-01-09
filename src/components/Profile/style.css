@@ -1,0 +1,71 @@
+.fake-body {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.profile-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10000;
+    width: 100vw;
+    height: 100vh;
+    background: url("https://images.pexels.com/photos/7031705/pexels-photo-7031705.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.section-profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border-radius: 10px;
+    margin: 0;
+    width: 50%;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.profile-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10vw;
+}
+
+.profile-item h1 {
+    color: orangered;
+    font-weight: normal;
+    font-size: 18px;
+    width: 100%;
+}
+
+.profile-item p {
+    font-size: 16px;
+    color: #808080;
+    width: 100%;
+
+}
+
+.profile-photo {
+    overflow: hidden;
+    border-radius: 10px 0 0 10px;
+
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+

@@ -1,0 +1,63 @@
+.frame {
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.list{
+    max-width: 860px;
+    max-height: 660px;
+    box-shadow: 0 0 10px 0 #b8b8b8;
+    padding: 32px;
+    border-radius: 32px 0 32px 32px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.list ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.list label {
+    color: orangered;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.list p {
+    margin-top: 8px;
+    color: #666666;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.print-btn{
+    background: orangered;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50% 0 50% 50%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    transition: all 300ms;
+}
+.print-btn:hover button, .print-btn:hover {
+    cursor: pointer;
+    background: white;
+    color: orangered;
+}
+.print-btn button {
+    color: white;
+    border: none;
+    background: none;
+    font-size: 24px;
+    font-weight: lighter;
+    transition: all 500ms;
+
+}
