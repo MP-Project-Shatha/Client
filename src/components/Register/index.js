@@ -128,7 +128,7 @@ const Register = () => {
                 value={"Register"}
               />
             </form>
-
+<p>{err}</p>
             <p className="not-member">
               <i>Already have an account?</i>
               <Link className={"forget-pass"} to={"/login"}>

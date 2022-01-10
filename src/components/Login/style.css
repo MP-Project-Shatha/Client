@@ -9,10 +9,13 @@ body{
     overflow: hidden;
 
 }
+.login-page{
+    width: 100% !;
+}
 
 .login-background-video {
     overflow: hidden;
-    width: 150%;
+    width: 105%;
     height: auto;
     object-fit: contain;
     position: absolute;
@@ -45,7 +48,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 100;
+    z-index: 1;
     text-transform: uppercase;
     font-weight: bold;
     word-spacing: 6px;

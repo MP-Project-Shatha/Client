@@ -4,11 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: end;
+    background: url("https://images.pexels.com/photos/669576/pexels-photo-669576.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat;
+    background-size: cover;
 }
 .list{
     max-width: 860px;
     max-height: 660px;
-    box-shadow: 0 0 10px 0 #b8b8b8;
+    box-shadow: 0 0 32px 0 #000000;
     padding: 32px;
     border-radius: 32px 0 32px 32px;
     margin-bottom: 10px;
@@ -29,7 +31,7 @@
 }
 .list p {
     margin-top: 8px;
-    color: #666666;
+    color: #000000;
     font-size: 16px;
     text-align: justify;
 }
