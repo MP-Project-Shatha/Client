@@ -5,7 +5,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: -10;
+    z-index: -90;
 }
 
 .welcome-screen {
@@ -59,7 +59,7 @@
 }
 .section-title{
     margin: 64px 0 0 0;
-    font-size: 32px;
+    font-size: 26px;
 
 }
 
@@ -68,16 +68,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5%;
+    width: 100%;
 }
 .card{
     width: 90%;
     color: orangered;
-    border-radius: 6px;
-    padding: 32px;
+    border-radius: 16px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 26px 3px rgba(0, 0, 0, 0.1);
-    text-align: justify;
+ 
     justify-content: space-between;
     gap: 42px;
 
@@ -87,14 +88,14 @@
 }
 .card-title{
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px;
     letter-spacing: 2px;
+    text-align: center;
 }
 .card-desc{
-    text-align: justify;
-    font-size: 16px;
+    font-size: 14px;
     color: #333333;
-    word-spacing: 3px;
+    word-spacing: 1px;
 }
 .card span{
     padding: 16px;

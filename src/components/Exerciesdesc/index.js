@@ -9,7 +9,9 @@ const Exerciesdesc = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
   const [workout, setWorkout] = useState([]);
-  const [video, setVideo] = useState("");
+  const [video, setVideo] = useState([]);
+ 
+
   console.log(param.id);
   const getPosts = () => {
     try {
@@ -34,15 +36,15 @@ const Exerciesdesc = () => {
       <section className="player-section">
         <div className="player-container">
           <div className="video-player">
-            <video src={video} controls />
+            <video src={video.video} controls />
           </div>
           <div className="videoList">
             {workout.map((item, i) => {
               return (
                 <>
                   <div
-                    className={"video-item"}
-                    onClick={() => setVideo(item.video)}
+                    className={`video-item ${item == video?("video-item-active"):("")}`}
+                    onClick={() => setVideo(item)}
                   >
                     <video className="video-img" src={item.video} />
                     <div>
@@ -54,6 +56,24 @@ const Exerciesdesc = () => {
               );
             })}
           </div>
+
+          <div className="videoList videoList-desc">
+          <div className="selected-video">
+          
+                <>
+                  <div
+                    className={`video-item-desc`}
+                  >
+                    
+                    <div className="video-description-container">
+                      <p className="video-title">{video.title}</p>
+                      <p className="video-desc">{video.desc}</p>
+                    </div>
+                  </div>
+                </>
+              </div>
+          </div>
+
         </div>
       </section>
     </>

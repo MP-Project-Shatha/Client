@@ -50,7 +50,7 @@ const Home = () => {
                         </Link>
 
                     </div>
-                    <div className="card active">
+                    <div className="card">
                         <span><FaRunning/></span>
 
                         <h2 className="card-title">

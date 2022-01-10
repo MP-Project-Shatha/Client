@@ -1,8 +1,8 @@
 .player-section{
+    padding:64px 0;
     width: 100vw;
     height: 100vh;
     background: #232323;
-
 }
 .player-container{
     width: 100%;
@@ -26,6 +26,9 @@
     border-radius: 0 10px 10px 0;
     background: white;
 }
+.videoList-desc{
+    overflow: visible;
+}
 .video-item{
     border-bottom: 1px solid #cecece;
     padding: 16px;
@@ -35,6 +38,15 @@
     height: auto;
     align-items: start;
     gap: 12px;
+}
+.video-item-active{
+    background: #ececec;
+}
+.video-description-container{
+ width: 100%;
+}
+.video-item-active .video-desc{
+    color:black;
 }
 .video-item:hover {
     cursor: pointer;

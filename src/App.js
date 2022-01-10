@@ -12,6 +12,7 @@ import Advices from "./components/Advices";
 import Information from "./components/Information";
 import Exercises from "./components/Exercises";
 import Exerciesdesc from "./components/Exerciesdesc";
+// import Footer from "./components/Footer";
 
 function App() {
   return (
