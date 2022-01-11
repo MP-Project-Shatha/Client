@@ -17,6 +17,15 @@
     background-size: cover;
     background-color: rgb(71, 70, 70);
 }
+/* button{
+    background: #52D6DE;
+    border: none;
+    font-size: 18px;
+    color: white;
+    border-radius: 6px;
+    padding: 6px 38px;
+    align-self: center;
+} */
 
 .section-profile {
     display: grid;

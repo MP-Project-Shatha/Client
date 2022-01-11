@@ -30,6 +30,19 @@ const Exerciesdesc = () => {
     getPosts();
   }, []);
 
+  // delete
+  const deletePost = (i) => {
+    console.log(i);
+    try {
+      axios.put(`${BASE_URL}/softDelete/${i}`).then((result) => {
+        console.log(result.data);
+        getPosts();
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -50,6 +63,7 @@ const Exerciesdesc = () => {
                     <div>
                       <p className="video-title">{item.title}</p>
                       <p className="video-desc">{item.desc}</p>
+                      <p onClick={() => deletePost(item._id)}>Delete</p>
                     </div>
                   </div>
                 </>
