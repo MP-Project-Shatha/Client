@@ -4,6 +4,7 @@ import "./style.css";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar";
+import { AiFillEdit } from "react-icons/ai";
 // lom
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const Profile = () => {
@@ -13,6 +14,8 @@ const Profile = () => {
   const [local, setLocal] = useState([]);
   const [edit, setEdit] = useState("");
   const [editEmail, setEmail] = useState("");
+  const [toggleName, setToggleName] = useState(false);
+  const [toggleEmail, setToggleEmail] = useState(false);
 
   const getData = async () => {
     // console.log(local);
@@ -41,23 +44,22 @@ const Profile = () => {
 
   const editName = async (e) => {
     e.preventDefault();
-    if (edit.length > 0) {
-      const editFullName = await axios.put(
-        `${BASE_URL}/edit/${local.result.email}`,
+    console.log(e.target[1].value);
 
-        {
-          fullName: edit,
-          // newEmail:editEmail,
-          // phone:edit,
-          // status1:edit,
-        }
-      );
-      console.log(editFullName);
-      document.getElementById("username");
-      getData();
-    } else {
-      console.log("");
-    }
+    const editFullName = await axios.put(
+      `${BASE_URL}/updateProfile/${local.result._id}`,
+
+      {
+        username: e.target[0].value,
+        email: e.target[1].value,
+        // password: e.target.password.value,
+      }
+    );
+    console.log(editFullName);
+    setToggleName(false);
+    setToggleEmail(false);
+    document.getElementById("username");
+    getData();
   };
   const kick = () => {
     // eslint-disable-next-line
@@ -75,15 +77,50 @@ const Profile = () => {
           <div className="profile-photo">
             <img src={require("../../imges/profile-img.jpg")} alt="" />
           </div>
+          <form onSubmit={editName}>
           <div className="profile-container">
             <div className="profile-item">
               <div>
                 <h1>Username:</h1>
                 <p>{account.username}</p>
+                {toggleName ? (
+                        <div className={"input-field"}>
+                          <input
+                            type="text"
+                            name="fullName"
+                            placeholder="Enter your name"
+                            className="show"
+                          />
+                        </div>
+                      ) : (
+                        <button
+                          className={"input-btn"}
+                          onClick={() => setToggleName(true)}
+                        >
+                          <AiFillEdit />
+                        </button>
+                      )}
               </div>
               <div>
                 <h1>Email:</h1>
                 <p>{account.email}</p>
+                {toggleEmail ? (
+                        <div>
+                          <input
+                            type="text"
+                            name="   "
+                            placeholder="Enter your phone"
+                            className="show"
+                          />
+                        </div>
+                      ) : (
+                        <h4
+                          className="Button_Change"
+                          onClick={() => setToggleEmail(true)}
+                        >
+                          <AiFillEdit />
+                        </h4>
+                      )}
               </div>
             </div>
             <div className="profile-item">
@@ -179,9 +216,17 @@ const Profile = () => {
                 ) : (
                   <></>
                 )}
+                 <button
+                        type="submit"
+                        className="profile-submit-btn"
+                        className="profile-save"
+                      >
+                        Change
+                      </button>
               </div>
             </div>
           </div>
+          </form>
         </section>
       </div>
     </>
