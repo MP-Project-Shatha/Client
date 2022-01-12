@@ -73,6 +73,17 @@ const Navbar = () => {
                 <li className="navbar-item">
                   <Link
                     className={`navbar-link ${
+                      current === "/Yourexercies" ? "navbar-link-current" : ""
+                    }`}
+                    to="/Yourexercies"
+                  >
+                    {" "}
+                    Yourexercies
+                  </Link>
+                </li>
+                <li className="navbar-item">
+                  <Link
+                    className={`navbar-link ${
                       current === "/Advices" ? "navbar-link-current" : ""
                     }`}
                     to="/Advices"

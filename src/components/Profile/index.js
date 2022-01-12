@@ -68,7 +68,7 @@ const Profile = () => {
   };
 
   return (
-    <>
+    <div className="profileBody">
       <Navbar />
       <div className="fake-body">
         <div className="profile-background"></div>
@@ -225,7 +225,7 @@ const Profile = () => {
           </form>
         </section>
       </div>
-    </>
+    </div>
   );
 };
 
