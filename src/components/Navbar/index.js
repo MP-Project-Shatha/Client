@@ -2,9 +2,9 @@ import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
-
+import { IoMdLogIn } from "react-icons/io";
+import { BiRegistered } from "react-icons/bi";
 import logo from "./../../imges/logof.png";
-
 import "./style.css";
 import { FiLogIn } from "react-icons/fi";
 import { RiAccountCircleLine } from "react-icons/ri";
@@ -112,12 +112,12 @@ const Navbar = () => {
               <>
                 <li className={"navbar-item register-btn"}>
                   <Link className="navbar-link" to="/register">
-                    <RiAccountCircleLine />
+                    <BiRegistered />
                   </Link>
                 </li>
                 <li className={"navbar-item login-btn"}>
                   <Link className="navbar-link" to={"/login"}>
-                    <FiLogIn />
+                    <IoMdLogIn />
                   </Link>
                 </li>
               </>
