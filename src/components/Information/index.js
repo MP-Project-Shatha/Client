@@ -50,7 +50,12 @@ function Information() {
     <>
       <Navbar />
       <div className="login-box-container">
-        <video autoPlay muted loop className="login-background-video-information">
+        <video
+          autoPlay
+          muted
+          loop
+          className="login-background-video-information"
+        >
           <source
             src="https://player.vimeo.com/external/433938674.sd.mp4?s=71fbc7c7a37f1123d6884b060f0304cdcf8ac988&profile_id=139&oauth2_token_id=57447761"
             type="video/webm"

@@ -41,30 +41,6 @@ const Login = () => {
     }
   };
 
-  // const login = async (e) => {
-  //   try {
-  //     console.log(e);
-  //     e.preventDefault();
-  //     const result = await axios.post(`${BASE_URL}/login`, {
-  //       email: e.target.email.value,
-  //       password: e.target.password.value,
-  //     });
-  //     massage = result.data;
-  //     let massage = "";
-  //     console.log(massage);
-
-  //     if (result.data?.token) {
-  //       console.log(result.data);
-
-  //       localStorage.setItem("user", JSON.stringify(result.data));
-  //       navigate("/information");
-  //       // showMassage = false
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
     <>
       <Navbar />
@@ -112,6 +88,7 @@ const Login = () => {
                   Forget Password?
                 </Link>
               </div>
+              <p>{err}</p>
             </form>
 
             <p className="not-member">

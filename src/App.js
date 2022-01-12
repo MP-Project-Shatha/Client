@@ -16,7 +16,9 @@ import Exerciesdesc from "./components/Exerciesdesc";
 
 function App() {
   return (
+    
     <>
+   
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
@@ -29,7 +31,11 @@ function App() {
         <Route exact path="/Profile" element={<Profile />} />
         <Route exact path="/Advices" element={<Advices />} />
         <Route exact path="/Information" element={<Information />} />
+        {/* <Route exact path="/Footer" element={<Footer />} /> */}
+
       </Routes>
+      {/* <Footer/> */}
+
     </>
   );
 }
