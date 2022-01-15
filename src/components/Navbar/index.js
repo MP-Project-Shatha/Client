@@ -120,18 +120,18 @@ const Navbar = () => {
                 </li>
               </>
             ) : (
-              <>
+              <div className="login_nav">
                 <li className={"navbar-item register-btn"}>
                   <Link className="navbar-link" to="/register">
-                    <BiRegistered />
+                    <button className="Register"> Register </button>
                   </Link>
                 </li>
                 <li className={"navbar-item login-btn"}>
-                  <Link className="navbar-link" to={"/login"}>
-                    <IoMdLogIn />
+                  <Link className="login" to={"/login"}>
+                    <button className="Login"> Login </button>
                   </Link>
                 </li>
-              </>
+              </div>
             )}
           </ul>
         </div>

@@ -1,6 +1,8 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
+import Navbar from "../Navbar";
+
 // import {useNavigate} from "react-router";
 
 const YourExercies = () => {
@@ -42,13 +44,18 @@ const YourExercies = () => {
 
   // Remove
   const removeFavorite = (_id) => {
-    const remove = axios.put(`${BASE_URL}/EExe/${local.result.email}}/${_id}`);
-    setAccount(remove.data[0].plan);
+
+    const remove = axios.put(`${BASE_URL}/EExe/${local.result.email}/${_id}`);
+    console.log(remove);
+
+   
 
     getLocalStorage();
   };
   return (
     <>
+    <Navbar/>
+
       <section className="player-section">
         <div className="player-container">
           <div className="video-player">
