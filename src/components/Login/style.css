@@ -115,11 +115,25 @@ body{
 }
 
 .submit-btn {
+    cursor: pointer;
     border: none;
     width: 100%;
     font-size: 16px;
     color: white;
     background: orangered;
+    border-radius: 6px;
+    padding: 8px 0;
+    letter-spacing: 3px;
+    font-weight: bolder;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    background: black;
     border-radius: 6px;
     padding: 8px 0;
     letter-spacing: 3px;

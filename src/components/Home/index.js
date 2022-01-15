@@ -66,12 +66,12 @@ const Home = () => {
               By Training Your Leg Muscles, You Will Not Get Tired Quickly And
               Make Your Legs Avoid Cramps In Every Condition
             </p>
-            <Link className="learn-more-link" to="/Exerciesdesc/Adductors">
+            <a className="learn-more-link" href="https://www.self.com/gallery/killer-legs-no-gear-required-slideshow">
               Learn more{" "}
               <i>
                 <AiOutlineArrowRight />
               </i>
-            </Link>
+            </a>
           </div>
           <div className="card">
             <span>

@@ -1,0 +1,10 @@
+.info__button{
+
+    cursor: pointer;
+}
+.info__button:hover{
+
+    cursor: pointer;
+    background-color: rgba(163, 95, 5, 0.959);
+    transition:3s
+}

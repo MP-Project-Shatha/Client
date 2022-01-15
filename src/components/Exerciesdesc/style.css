@@ -1,9 +1,26 @@
 .player-section{
     padding:64px 0;
     width: 100vw;
-    height: 100vh;
+    height: 115vh;
     background: #232323;
     
+}
+.inputSearch{
+    width: 40%;
+    border-radius:10px;
+    padding: 7px;
+    margin-bottom: 16px;
+   
+}
+.search_div{
+    display:absolute;
+    margin-top: 16px;
+
+}
+.divSearchInput{
+ 
+
+    margin-left: 30%;
 }
 .player-container{
     width: 100%;

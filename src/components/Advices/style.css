@@ -52,8 +52,7 @@
 }
 .print-btn:hover button, .print-btn:hover {
     cursor: pointer;
-    background: white;
-    color: orangered;
+    color: black;
 }
 .print-btn button {
     color: white;
