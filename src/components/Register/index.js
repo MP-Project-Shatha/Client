@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { RiArrowGoBackLine } from "react-icons/ri";
-
+// f
 import "./style.css";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
