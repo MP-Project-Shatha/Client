@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar";
+import Swal from 'sweetalert2'
 import { AiTwotoneDelete } from "react-icons/ai";
 
 import "./style.css";
@@ -50,6 +51,13 @@ const Exerciesdesc = () => {
     let test = [];
 
     const Add = await axios.put(`${BASE_URL}/Exe/${user.result.email}/${id}`);
+    Swal.fire({
+      position: 'counter',
+      icon: 'success',
+      title: 'The exercises have been added to your exercises',
+      showConfirmButton: false,
+      timer: 1500
+    })
     console.log(Add);
 
     getPosts();
