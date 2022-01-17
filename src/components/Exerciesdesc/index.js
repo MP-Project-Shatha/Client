@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 import { AiTwotoneDelete } from "react-icons/ai";
 
 import "./style.css";
@@ -14,6 +14,7 @@ const Exerciesdesc = () => {
   const [workout, setWorkout] = useState([]);
   const [video, setVideo] = useState([]);
   const [search, setSearch] = useState("");
+  const [add, setAdd] = useState([]);
 
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -31,6 +32,7 @@ const Exerciesdesc = () => {
   };
 
   useEffect(() => {
+    getData();
     getPosts();
   }, []);
 
@@ -48,19 +50,26 @@ const Exerciesdesc = () => {
   // };
 
   const removeOrAdd = async (id) => {
-    let test = [];
+    // let test = [];
 
     const Add = await axios.put(`${BASE_URL}/Exe/${user.result.email}/${id}`);
     Swal.fire({
-      position: 'counter',
-      icon: 'success',
-      title: 'The exercises have been added to your exercises',
+      position: "counter",
+      icon: "success",
+      title: "The exercises have been added to your exercises",
       showConfirmButton: false,
-      timer: 1500
-    })
-    console.log(Add);
-
+      timer: 1500,
+    });
+    // setAdd(false)
+    getData()
     getPosts();
+  };
+
+
+  const getData = async () => {
+    const item = await axios.post(`${BASE_URL}/Exee/${user.result.email}`);
+    setAdd(item.data[0].plan);
+    //   console.log(local.result.email);
   };
 
   useEffect(() => {
@@ -76,7 +85,7 @@ const Exerciesdesc = () => {
 
       <section className="player-section">
         <div className="search_div">
-      <div className="divSearchInput">
+          <div className="divSearchInput">
             <input
               type="text"
               name="search"
@@ -86,11 +95,9 @@ const Exerciesdesc = () => {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          </div>
+        </div>
         <div className="player-container">
-       
           <div className="video-player">
-         
             <video src={video.video} controls />
           </div>
           <div className="videoList">
@@ -119,13 +126,22 @@ const Exerciesdesc = () => {
                         <div>
                           <p className="video-title">{item.title}</p>
                           <p className="video-desc">{item.desc}</p>
-                          <button
-                        className={"info__button"}
-                        onClick={() => removeOrAdd(item._id)}
-                      >
-                        {" "}
-                        Add
-                      </button>
+                          {console.log(add)}
+                          {!add.some(i=>i._id==item._id) ? (
+                            <button
+                              className={"info__button"}
+                              onClick={() => removeOrAdd(item._id)}
+                            >
+                              Add
+                            </button>
+                          ) : (
+                            <button
+                              className={"info__button"}
+                              onClick={() => removeOrAdd(item._id)}
+                            >
+                              Remove
+                            </button>
+                          )}
                         </div>
                       </div>
                     </>
