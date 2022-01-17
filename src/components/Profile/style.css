@@ -35,12 +35,17 @@ button{
 }
 .Change_button{
     background: orangered;
-    border: none;
-    font-size: 18px;
+    /* border: none; */
+    font-size: 15px;
     color: rgb(255, 255, 255);
-    border-radius: 20px;
-    padding: 6px 38px;
-    align-self: center;
+    border-radius: 40px;
+    padding: 8px 20px ;
+    /* align-self: center; */
+
+}
+.Change_button:hover{
+    background: black;
+    color:white;
 }
 
 .section-profile {

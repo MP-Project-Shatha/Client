@@ -104,23 +104,7 @@ const Profile = () => {
                 <div>
                   <h1>Email:</h1>
                   <p>{account.email}</p>
-                  {toggleEmail ? (
-                    <div>
-                      <input
-                        type="text"
-                        name="   "
-                        placeholder="Enter your phone"
-                        className="show"
-                      />
-                    </div>
-                  ) : (
-                    <button
-                      className="Button_Change"
-                      onClick={() => setToggleEmail(true)}
-                    >
-                      <AiFillEdit />
-                    </button>
-                  )}
+                  
                 </div>
               </div>
               <div className="profile-item">

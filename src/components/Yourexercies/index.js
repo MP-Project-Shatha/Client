@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
 import Navbar from "../Navbar";
+import Swal from 'sweetalert2'
 
 // import {useNavigate} from "react-router";
 // ff
@@ -46,6 +47,13 @@ const YourExercies = () => {
   const removeFavorite = (_id) => {
 
     const remove = axios.put(`${BASE_URL}/EExe/${local.result.email}/${_id}`);
+    Swal.fire({
+      position: 'counter',
+      icon: 'success',
+      title: 'Exercise has been removed from your workout',
+      showConfirmButton: false,
+      timer: 1500
+    })
     console.log(remove);
 
    

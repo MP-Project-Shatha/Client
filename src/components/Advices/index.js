@@ -70,7 +70,7 @@ const Advices = () => {
               <label htmlFor="item-2" className="text">
                 Your calories:{" "}
               </label>
-              <p>{userInfo?.result?.weight * 24 * userInfo?.result?.active}</p>
+              <p>{userInfo?.result?.weight * 24 * userInfo?.result?.active} Kcal. </p>
             </li>
             <li>
               <label htmlFor="item-3" className="text">
@@ -82,13 +82,13 @@ const Advices = () => {
               <label htmlFor="item-4" className="text">
                 Advices:
               </label>
-              <p>{massig}</p>
+              <h5>{massig}</h5>
             </li>
             <li>
               <label htmlFor="item-4" className="text">
                 Your Water:
               </label>
-              <p>{userInfo?.result?.weight * 30}</p>
+              <p>{userInfo?.result?.weight * 30} ml.</p>
             </li>
           </ul>
         </div>
