@@ -53,7 +53,7 @@ const Navbar = () => {
                 to="/Exercises"
               >
                 {" "}
-                Exercises{" "}
+                Exercises {" "}
               </Link>
             </li>
 
@@ -78,7 +78,7 @@ const Navbar = () => {
                     to="/Yourexercies"
                   >
                     {" "}
-                    Yourexercies
+                    Your Exercises
                   </Link>
                 </li>
                 <li className="navbar-item">
