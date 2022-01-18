@@ -2,7 +2,7 @@
 
 ➤ Server side: https://github.com/MP-Project-Shatha
 
-➤ Deployment: https://Deployment
+➤ Deployment: https://dashboard.heroku.com/apps/project-client-shatha
 
 ➤ While running Frontend: http://localhost:3000
 
