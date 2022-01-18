@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+➤ Server side: https://github.com/MP-Project-Shatha
 
-## Available Scripts
+➤ Deployment: https://Deployment
 
-In the project directory, you can run:
+➤ While running Frontend: http://localhost:3000
 
-### `npm start`
+➤ While running locally: http://localhost:5000
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+➤ Trello:  https://trello.com/b/H1Pu4xiD/master-piece-project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+➤ Slides: https://Slides
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User Stories
 
-### `npm run build`
+- **Register:** Register for access to allow it to use the website.
+- **Login:** As a `user` i can login to the website so i can see my calories and exercise.
+- **Logout:** As a `user` i can logout from my page.
+- **Add weight and height:** As a `user` can add weight and height to calculate the right calories  for `user`.
+- **User Exercises:** As a `user` l can see exercies for weight and target.
+- **User water requirment:** Calculation for the requirment for wieght and height.
+- **Add Exercises:**  As a `admin` i can add exercises for users. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ## user profile:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **See my profile**
+- **See the exit point**
+ - **Look at the state of exercises**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## React Router Routes (React App)
 
-### `npm run eject`
+| Path             | Component            | Permissions                | Behavior                                                     |
+| ---------------- | -------------------- | -------------------------- | ------------------------------------------------------------ |
+| `/`              | homePage           | public `<Route>`           | Home page                                                    |
+| `/Register`        | RegisterPage           |anon only `<AnonRoute>`     |Registration form, after activating the account, go to the login page |
+| `/Login`         | LoginPage            | anon only `<AnonRoute>`    | Login form, link to signup, navigate to homepage after login |
+| `/Like`     | like exercises    | user only `<PrivateRoute>` | Shows all exit points in a list                              |
+| `/Activated` | Verify that the account is active or not   | user only `<PrivateRoute>` | Confirm activation to enter the site to save rights
+| `/Forget` | Forget password page                  | user only `<PrivateRoute>` | If the password is forgotten, it will be set again after sending a link |
+| `/Rest` | To set the password | user only `<PrivateRoute>` | If the password is forgotten, it will be set from restpassword                             |
+| `/Exercises` |exercises page                  | user only `<PrivateRoute>` | Many exercises  
+| `/Search` |   Search for exercises                | user only `<PrivateRoute>` |   Search for exercises    
+| `/UserPage` | Profile                | user only `<PrivateRoute>` | Review of exercises and measurements    
+| `/Advices` |  Advices for user               | user only `<PrivateRoute>` | After user enter information
+| `/Active` |  For user             | user only `<PrivateRoute>` | For exercises
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Components
+- Register
+- Login
+- Like
+- Activated
+- Forget
+- Rest
+- Exercises
+- Search
+- UserPage
+- Advices
+- Active
+- Navbar
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## UML
+![UMLFRONT-PM](https://user-images.githubusercontent.com/92248175/146686631-2a612f9f-c6ff-4c2d-9811-520617fd0867.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Wirframes
+![1](https://user-images.githubusercontent.com/92248175/146723241-953895b8-5a1b-47ec-924d-eaad218bc410.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![2](https://user-images.githubusercontent.com/92248175/146723249-d2d8bb58-4bf3-4323-8b51-4db289ac7618.png)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![3](https://user-images.githubusercontent.com/92248175/146723258-02cd7ef4-7d5a-4635-bb03-0a17c196d433.png)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![4](https://user-images.githubusercontent.com/92248175/146724545-4bde900c-890a-4ae9-840f-f251821b2a1a.png)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
