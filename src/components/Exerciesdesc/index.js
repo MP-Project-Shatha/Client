@@ -61,10 +61,9 @@ const Exerciesdesc = () => {
       timer: 1500,
     });
     // setAdd(false)
-    getData()
+    getData();
     getPosts();
   };
-
 
   const getData = async () => {
     const item = await axios.post(`${BASE_URL}/Exee/${user.result.email}`);
@@ -127,7 +126,7 @@ const Exerciesdesc = () => {
                           <p className="video-title">{item.title}</p>
                           <p className="video-desc">{item.desc}</p>
                           {console.log(add)}
-                          {!add.some(i=>i._id==item._id) ? (
+                          {!add.some((i) => i._id == item._id) ? (
                             <button
                               className={"info__button"}
                               onClick={() => removeOrAdd(item._id)}

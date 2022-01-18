@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 import Navbar from "../Navbar";
 import { AiOutlinePrinter } from "react-icons/ai";
 
 const Advices = () => {
+  const navigate = useNavigate();
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [userInfo, setuserInfo] = useState([]);
   const [status, setStatus] = useState("");
@@ -45,6 +47,10 @@ const Advices = () => {
     }
   };
 
+  // const navigateee =()=>{
+
+  //   navigate("/home")
+  // }
   useEffect(() => {
     setuserInfo(JSON.parse(localStorage.getItem("user")));
   }, []);
@@ -58,40 +64,55 @@ const Advices = () => {
       <Navbar />
 
       <div className="frame">
-        <div className="list">
-          <div className={"print-btn"}>
-            <button onClick={window.print}>
-              {" "}
-              <AiOutlinePrinter />{" "}
-            </button>
+        {!data?.weight ? (
+          
+          <button
+            className={"info__button"}
+            onClick={() => {
+              navigate("/Information");
+            }}
+          >
+            Go to page information
+          </button>
+          
+        ) : (
+          <div className="list">
+            <div className={"print-btn"}>
+              <button onClick={window.print}>
+                <AiOutlinePrinter />{" "}
+              </button>
+            </div>
+            <ul>
+              <li>
+                <label htmlFor="item-2" className="text">
+                  Your calories:{" "}
+                </label>
+                <p>
+                  {userInfo?.result?.weight * 24 * userInfo?.result?.active}{" "}
+                  Kcal.{" "}
+                </p>
+              </li>
+              <li>
+                <label htmlFor="item-3" className="text">
+                  Status:
+                </label>
+                <p>{status}</p>
+              </li>
+              <li>
+                <label htmlFor="item-4" className="text">
+                  Advices:
+                </label>
+                <h5>{massig}</h5>
+              </li>
+              <li>
+                <label htmlFor="item-4" className="text">
+                  Your Water:
+                </label>
+                <p>{userInfo?.result?.weight * 30} ml.</p>
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li>
-              <label htmlFor="item-2" className="text">
-                Your calories:{" "}
-              </label>
-              <p>{userInfo?.result?.weight * 24 * userInfo?.result?.active} Kcal. </p>
-            </li>
-            <li>
-              <label htmlFor="item-3" className="text">
-                Status:
-              </label>
-              <p>{status}</p>
-            </li>
-            <li>
-              <label htmlFor="item-4" className="text">
-                Advices:
-              </label>
-              <h5>{massig}</h5>
-            </li>
-            <li>
-              <label htmlFor="item-4" className="text">
-                Your Water:
-              </label>
-              <p>{userInfo?.result?.weight * 30} ml.</p>
-            </li>
-          </ul>
-        </div>
+        )}
       </div>
     </>
   );
