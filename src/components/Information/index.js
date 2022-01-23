@@ -7,6 +7,7 @@ import Navbar from "../Navbar";
 function Information() {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
+  const [user, setuser] = useState([]);
 
   const addInformation = async (e) => {
     e.preventDefault();
@@ -34,14 +35,17 @@ function Information() {
       },
       
     );
+    console.log(user);
+    let usr = user
+    usr.result.weight = e.target.Weight.value
+    localStorage.setItem("user",JSON.stringify(usr))
+
     navigate("/Advices");
-    // console.log(result.data);
     if (result.data == "Done") {
       navigate("/Advices");
     }
   };
 
-  const [user, setuser] = useState([]);
   useEffect(() => {
     setuser(JSON.parse(localStorage.getItem("user")));
   }, []);
