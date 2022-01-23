@@ -125,22 +125,35 @@ const Exerciesdesc = () => {
                         <div>
                           <p className="video-title">{item.title}</p>
                           <p className="video-desc">{item.desc}</p>
-                          {console.log(add)}
-                          {!add.some((i) => i._id == item._id) ? (
-                            <button
-                              className={"info__button"}
-                              onClick={() => removeOrAdd(item._id)}
-                            >
-                              Add
-                            </button>
-                          ) : (
-                            <button
-                              className={"info__button"}
-                              onClick={() => removeOrAdd(item._id)}
-                            >
-                              Remove
-                            </button>
-                          )}
+
+                          <>
+                            {!add.some((i) => i._id == item._id) ? (
+                              
+                            
+                              
+                                <button
+                                
+                                  className={"info__button"}
+                                  onClick={() => {user?removeOrAdd(item._id):<>{Swal.fire(
+                                    'Please login!',
+                                    
+                                    
+                                  )}</>}}
+                                >
+                                  Add
+                                </button>
+                              
+                            
+                              
+                            ) : (
+                              <button
+                                className={"info__button"}
+                                onClick={() => removeOrAdd(item._id)}
+                              >
+                                Remove
+                              </button>
+                            )}
+                          </>
                         </div>
                       </div>
                     </>
@@ -167,3 +180,19 @@ const Exerciesdesc = () => {
 };
 
 export default Exerciesdesc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
