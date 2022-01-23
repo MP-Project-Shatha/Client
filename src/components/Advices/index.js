@@ -16,12 +16,12 @@ const Advices = () => {
   const getPost = () => {
     try {
       axios.get(`${BASE_URL}/getInfo/${userInfo.result._id}`).then((result) => {
-        console.log(result.data);
+        // console.log(result.data);
         getPost();
         setData(result.data);
         
         let s = result.data.weight / (result.data.height / 100) ** 2;
-        console.log(s);
+        // console.log(s);
         
         if (s < 18.5) setStatus("Underweight");
         if (s < 18.5)
