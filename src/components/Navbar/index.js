@@ -8,7 +8,7 @@ import logo from "./../../imges/logof.png";
 import "./style.css";
 import { FiLogIn } from "react-icons/fi";
 import { RiAccountCircleLine } from "react-icons/ri";
-
+// 
 const Navbar = () => {
   const navigate = useNavigate();
   var current = useLocation().pathname;
