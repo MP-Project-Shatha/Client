@@ -11,6 +11,7 @@
 # production
 /build
 # REACT_APP_BASE_URL=https://project-server-shatha.herokuapp.com
+# REACT_APP_BASE_URL=http://localhost:5000
 
 # misc
 .DS_Store
