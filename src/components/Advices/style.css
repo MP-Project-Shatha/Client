@@ -11,6 +11,7 @@
     max-width: 860px;
     max-height: 660px;
     box-shadow: 0 0 32px 0 #000000;
+    background-color: white;
     padding: 32px;
     border-radius: 32px 0 32px 32px;
     margin-bottom: 10px;
@@ -51,8 +52,7 @@
 }
 .print-btn:hover button, .print-btn:hover {
     cursor: pointer;
-    background: white;
-    color: orangered;
+    color: black;
 }
 .print-btn button {
     color: white;
@@ -63,3 +63,5 @@
     transition: all 500ms;
 
 }
+
+

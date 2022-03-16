@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { RiArrowGoBackLine } from "react-icons/ri";
-
+// f
 import "./style.css";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
@@ -128,7 +128,7 @@ const Register = () => {
                 value={"Register"}
               />
             </form>
-<p>{err}</p>
+            <p>{err}</p>
             <p className="not-member">
               <i>Already have an account?</i>
               <Link className={"forget-pass"} to={"/login"}>

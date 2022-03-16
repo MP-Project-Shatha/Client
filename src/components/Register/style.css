@@ -10,6 +10,9 @@
     width: 100%;
     color: black;
 }
+.submit-btn{
+    cursor: pointer;
+}
 .section-login .flip img{
     clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
     filter: grayscale(1) brightness(0.8);

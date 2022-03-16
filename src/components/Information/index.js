@@ -7,6 +7,7 @@ import Navbar from "../Navbar";
 function Information() {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
+  const [user, setuser] = useState([]);
 
   const addInformation = async (e) => {
     e.preventDefault();
@@ -32,16 +33,19 @@ function Information() {
         nutrition: e.target.Nutrition.value,
         armdiameter: e.target.Armdiameter.value,
       },
-      { withCredentials: true }
+      
     );
+    console.log(user);
+    let usr = user
+    usr.result.weight = e.target.Weight.value
+    localStorage.setItem("user",JSON.stringify(usr))
+
     navigate("/Advices");
-    // console.log(result.data);
     if (result.data == "Done") {
       navigate("/Advices");
     }
   };
 
-  const [user, setuser] = useState([]);
   useEffect(() => {
     setuser(JSON.parse(localStorage.getItem("user")));
   }, []);
@@ -50,7 +54,12 @@ function Information() {
     <>
       <Navbar />
       <div className="login-box-container">
-        <video autoPlay muted loop className="login-background-video-information">
+        <video
+          autoPlay
+          muted
+          loop
+          className="login-background-video-information"
+        >
           <source
             src="https://player.vimeo.com/external/433938674.sd.mp4?s=71fbc7c7a37f1123d6884b060f0304cdcf8ac988&profile_id=139&oauth2_token_id=57447761"
             type="video/webm"
@@ -105,7 +114,7 @@ function Information() {
                   <input className={"input-field"} type="number" name="Age" />
                 </div>
                 <div className="input-box">
-                  <p className="input-label">Weight</p>
+                  <p className="input-label">Weight (Kg)</p>
                   <input
                     className={"input-field"}
                     type="number"
@@ -113,7 +122,7 @@ function Information() {
                   />
                 </div>
                 <div className="input-box">
-                  <p className="input-label">Height</p>
+                  <p className="input-label">Height (cm) </p>
                   <input
                     className={"input-field"}
                     type="number"
@@ -123,25 +132,25 @@ function Information() {
               </div>
               <div className="password-group">
                 <div className="input-box">
-                  <p className="input-label">Wrist</p>
+                  <p className="input-label">Wrist (cm) </p>
                   <input className={"input-field"} type="number" name="Wrist" />
                 </div>
                 <div className="input-box">
-                  <p className="input-label">Waist</p>
+                  <p className="input-label">Waist (cm)</p>
                   <input className={"input-field"} type="number" name="Waist" />
                 </div>
                 <div className="input-box">
-                  <p className="input-label">Chest</p>
+                  <p className="input-label">Chest (cm)</p>
                   <input className={"input-field"} type="number" name="Chest" />
                 </div>
               </div>
               <div className="password-group">
                 <div className="input-box">
-                  <p className="input-label">Thigh</p>
+                  <p className="input-label">Thigh (cm)</p>
                   <input className={"input-field"} type="number" name="Thigh" />
                 </div>
                 <div className="input-box">
-                  <p className="input-label">Pelvis</p>
+                  <p className="input-label">Pelvis (cm)</p>
                   <input
                     className={"input-field"}
                     type="number"
@@ -149,13 +158,13 @@ function Information() {
                   />
                 </div>
                 <div className="input-box">
-                  <p className="input-label">Ankle</p>
+                  <p className="input-label">Ankle (cm)</p>
                   <input className={"input-field"} type="number" name="Ankle" />
                 </div>
               </div>
               <div className="password-group">
                 <div className="input-box">
-                  <p className="input-label">Armdiameter</p>
+                  <p className="input-label">Armdiameter (cm)</p>
                   <input
                     className={"input-field"}
                     type="number"
@@ -163,7 +172,7 @@ function Information() {
                   />
                 </div>
                 <div className="input-box">
-                  <p className="input-label">Muscledimeter</p>
+                  <p className="input-label">Muscledimeter(%)</p>
                   <input
                     className={"input-field"}
                     type="number"
@@ -171,7 +180,7 @@ function Information() {
                   />
                 </div>
                 <div className="input-box">
-                  <p className="input-label">Fatpercentage</p>
+                  <p className="input-label">Fatpercentage(%)</p>
                   <input
                     className={"input-field"}
                     type="number"
@@ -181,7 +190,7 @@ function Information() {
               </div>
               <div className="password-group">
                 <div className="input-box">
-                  <p className="input-label">Bonepercentage</p>
+                  <p className="input-label">Bone percentage(%)</p>
                   <input
                     className={"input-field"}
                     type="number"

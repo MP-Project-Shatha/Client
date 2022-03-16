@@ -12,14 +12,19 @@ import Advices from "./components/Advices";
 import Information from "./components/Information";
 import Exercises from "./components/Exercises";
 import Exerciesdesc from "./components/Exerciesdesc";
+import Yourexercies from "./components/Yourexercies";
+
 // import Footer from "./components/Footer";
 
 function App() {
   return (
+    
     <>
+   
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/Yourexercies" element={<Yourexercies />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/Exercises" element={<Exercises />} />
         <Route exact path="/Exerciesdesc/:id" element={<Exerciesdesc />} />
@@ -29,7 +34,11 @@ function App() {
         <Route exact path="/Profile" element={<Profile />} />
         <Route exact path="/Advices" element={<Advices />} />
         <Route exact path="/Information" element={<Information />} />
+        {/* <Route exact path="/Footer" element={<Footer />} /> */}
+
       </Routes>
+      {/* <Footer/> */}
+
     </>
   );
 }
