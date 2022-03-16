@@ -7,7 +7,7 @@ import { RiArrowGoBackLine } from "react-icons/ri";
 const PasswordReset = () => {
   const location = useLocation();
   const navigate = useNavigate();
-// 
+
   const token = location.pathname.split("/")[2];
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [err, setErr] = useState("");

@@ -21,7 +21,7 @@ const Profile = () => {
     // console.log(local);
     if (local.result) {
       // const item = await axios.get(`${BASE_URL}/email/${local.result.email}`);
-      const item = await axios.get(`${BASE_URL}/getInfo/${local.result._id}`);
+      const item = await axios.post(`${BASE_URL}/getInfo/${local.result._id}`);
       console.log(item.data.act);
       setAccount(item.data);
     } else {
@@ -67,6 +67,7 @@ const Profile = () => {
     navigate("/login");
   };
 
+  
   return (
     <div className="profileBody">
       <Navbar />

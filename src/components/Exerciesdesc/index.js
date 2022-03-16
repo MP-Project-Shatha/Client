@@ -100,7 +100,7 @@ const Exerciesdesc = () => {
             <video src={video.video} controls />
           </div>
           <div className="videoList">
-            {workout.length &&
+            {workout &&
               workout
                 // eslint-disable-next-line
                 .filter((item) => {
@@ -180,19 +180,3 @@ const Exerciesdesc = () => {
 };
 
 export default Exerciesdesc;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
