@@ -112,6 +112,8 @@ const YourExercies = () => {
           </div>
         </div>
       </section>
+
+      
     </>
   );
 };
