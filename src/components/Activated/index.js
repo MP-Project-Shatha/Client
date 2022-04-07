@@ -21,7 +21,6 @@ const Activated = () => {
       if (result.data.err) {
         setErr(result.data.err);
       }
-      console.log(result.data);
     } catch (error) {
       console.log(error);
     }

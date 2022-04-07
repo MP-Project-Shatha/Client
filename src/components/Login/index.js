@@ -6,15 +6,17 @@ import Swal from "sweetalert2";
 import { MdEmail } from "react-icons/md";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import Navbar from "../Navbar";
+ 
+
 
 const Login = () => {
   const navigate = useNavigate();
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [err, setErr] = useState("");
   let showForgotDiagram = false;
-
+  
   const login = async (e) => {
-    console.log(e.target.email.value);
+    // console.log(e.target.email.value);
     try {
       e.preventDefault();
       const result = await axios.post(`${BASE_URL}/login`, {
@@ -30,6 +32,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        
         localStorage.setItem("user", JSON.stringify(result.data));
         navigate("/");
       } else {
@@ -110,7 +113,7 @@ const Login = () => {
             <img
               src={require("../../imges/login-img.jpg")}
               alt=""
-              className=""
+              
             />
           </div>
         </section>

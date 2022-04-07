@@ -14,7 +14,6 @@ import Exercises from "./components/Exercises";
 import Exerciesdesc from "./components/Exerciesdesc";
 import Yourexercies from "./components/Yourexercies";
 
-// import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -34,10 +33,7 @@ function App() {
         <Route exact path="/Profile" element={<Profile />} />
         <Route exact path="/Advices" element={<Advices />} />
         <Route exact path="/Information" element={<Information />} />
-        {/* <Route exact path="/Footer" element={<Footer />} /> */}
-
       </Routes>
-      {/* <Footer/> */}
 
     </>
   );

@@ -16,12 +16,10 @@ const Advices = () => {
   const getPost = () => {
     try {
       axios.post(`${BASE_URL}/getInfoAdvices/${userInfo.result._id}`).then((result) => {
-        // console.log(result.data);
         getPost();
         setData(result.data);
         
         let s = result.data.weight / (result.data.height / 100) ** 2;
-        // console.log(s);
         
         if (s < 18.5) setStatus("Underweight");
         if (s < 18.5)
@@ -50,10 +48,8 @@ const Advices = () => {
     }
   };
 
-  // const navigateee =()=>{
 
-  //   navigate("/home")
-  // }
+ 
   useEffect(() => {
     setuserInfo(JSON.parse(localStorage.getItem("user")));
   }, []);

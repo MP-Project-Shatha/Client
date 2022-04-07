@@ -18,7 +18,7 @@ const YourExercies = () => {
   const getLocalStorage = async () => {
     const item = await JSON.parse(localStorage.getItem("user"));
     setLocal(item);
-    console.log(item.result.email);
+    // console.log(item.result.email);
   };
 
   // Get info the character base on email from backend
@@ -35,7 +35,7 @@ const YourExercies = () => {
 
   useEffect(() => {
     if (local.result) getData();
-    console.log(local);
+    // console.log(local);
     // eslint-disable-next-line
   }, [local]);
   //   useEffect(() => {
@@ -44,17 +44,22 @@ const YourExercies = () => {
   //   }, [account]);
 
   // Remove
-  const removeFavorite = (_id) => {
-
-    const remove = axios.put(`${BASE_URL}/EExe/${local.result.email}/${_id}`);
-    Swal.fire({
-      position: 'counter',
-      icon: 'success',
-      title: 'Exercise has been removed from your workout',
-      showConfirmButton: false,
-      timer: 1500
-    })
-    console.log(remove);
+  const removeFavorite = async (_id) => {
+try {
+  const remove = await axios.put(`${BASE_URL}/EExe/${local.result.email}/${_id}`);
+  Swal.fire({
+    position: 'counter',
+    icon: 'success',
+    title: 'Exercise has been removed from your workout',
+    showConfirmButton: false,
+    timer: 1500
+  })
+} catch (error) {
+  console.log(error);
+  
+}
+  
+    // console.log(remove);
 
    
 
@@ -80,7 +85,7 @@ const YourExercies = () => {
                     onClick={() => setVideo(item)}
                   >
                     {/* <video className="video-img" src={item.video} /> */}
-                    {console.log(item.title)}
+                    {/* {console.log(item.title)} */}
                     <div>
                       <p className="video-title">{item.title}</p>
                       <p className="video-desc">{item.desc}</p>

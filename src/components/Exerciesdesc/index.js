@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../Navbar";
 import Swal from "sweetalert2";
 import { AiTwotoneDelete } from "react-icons/ai";
@@ -10,7 +10,6 @@ import "./style.css";
 const Exerciesdesc = () => {
   const param = useParams();
   const BASE_URL = process.env.REACT_APP_BASE_URL;
-  const navigate = useNavigate();
   const [workout, setWorkout] = useState([]);
   const [video, setVideo] = useState([]);
   const [search, setSearch] = useState("");
@@ -19,6 +18,8 @@ const Exerciesdesc = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   // console.log(param.id);
+
+  // Make Filter for Exercises by ID
   const getPosts = () => {
     try {
       axios.get(`${BASE_URL}/allExercises`).then((result) => {
@@ -36,23 +37,10 @@ const Exerciesdesc = () => {
     getPosts();
   }, []);
 
-  // delete
-  // const deletePost = (i) => {
-  //   console.log(i);
-  //   try {
-  //     axios.put(`${BASE_URL}/softDelete/${i}`).then((result) => {
-  //       console.log(result.data);
-  //       getPosts();
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
+  // Add Exercises
   const removeOrAdd = async (id) => {
-    // let test = [];
-
     const Add = await axios.put(`${BASE_URL}/Exe/${user.result.email}/${id}`);
+    
     Swal.fire({
       position: "counter",
       icon: "success",
@@ -60,21 +48,17 @@ const Exerciesdesc = () => {
       showConfirmButton: false,
       timer: 1500,
     });
-    // setAdd(false)
     getData();
     getPosts();
   };
 
+  // Get all Plan for user
   const getData = async () => {
     const item = await axios.post(`${BASE_URL}/Exee/${user.result.email}`);
     setAdd(item.data[0].plan);
-    //   console.log(local.result.email);
   };
 
   useEffect(() => {
-    // if (user.result) removeOrAdd();
-    // console.log(user.result.email);
-    // console.log(user);
     // eslint-disable-next-line
   }, [user]);
 
@@ -114,7 +98,7 @@ const Exerciesdesc = () => {
                 })
                 .map((item, i) => {
                   return (
-                    <>
+                    <div>
                       <div
                         className={`video-item ${
                           item == video ? "video-item-active" : ""
@@ -128,23 +112,18 @@ const Exerciesdesc = () => {
 
                           <>
                             {!add.some((i) => i._id == item._id) ? (
-                              
-                            
-                              
-                                <button
-                                
-                                  className={"info__button"}
-                                  onClick={() => {user?removeOrAdd(item._id):<>{Swal.fire(
-                                    'Please login!',
-                                    
-                                    
-                                  )}</>}}
-                                >
-                                  Add
-                                </button>
-                              
-                            
-                              
+                              <button
+                                className={"info__button"}
+                                onClick={() => {
+                                  user ? (
+                                    removeOrAdd(item._id)
+                                  ) : (
+                                    <>{Swal.fire("Please login!")}</>
+                                  );
+                                }}
+                              >
+                                Add
+                              </button>
                             ) : (
                               <button
                                 className={"info__button"}
@@ -156,7 +135,7 @@ const Exerciesdesc = () => {
                           </>
                         </div>
                       </div>
-                    </>
+                    </div>
                   );
                 })}
           </div>

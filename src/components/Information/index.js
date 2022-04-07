@@ -11,7 +11,7 @@ function Information() {
 
   const addInformation = async (e) => {
     e.preventDefault();
-    console.log(e.target);
+    // console.log(e.target);
     const result = await axios.post(
       `${BASE_URL}/addInfo`,
       {
@@ -35,7 +35,6 @@ function Information() {
       },
       
     );
-    console.log(user);
     let usr = user
     usr.result.weight = e.target.Weight.value
     localStorage.setItem("user",JSON.stringify(usr))
